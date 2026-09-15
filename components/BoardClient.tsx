@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import type { SeedData } from '@/lib/schedule';
 import { getTeams, getWeekEntry, getDoubleWeeks, getByeTeams } from '@/lib/schedule';
 import { spreadToWinPct } from '@/lib/winProb';
+import type { OddsCache } from '@/lib/oddsApi';
 import TeamPool from './TeamPool';
 import WeekBoard from './WeekBoard';
 import ScheduleGrid from './ScheduleGrid';
@@ -12,11 +13,12 @@ import Toast from './Toast';
 
 interface BoardClientProps {
   seedData: SeedData;
+  oddsCache: OddsCache | null;
 }
 
-export type CellInfo = { opp: string; spread: number; loc: string };
+export type CellInfo = { opp: string; spread: number; loc: string; isLive: boolean };
 export type Picks = Record<string, string[]>;
-export type Overrides = Record<string, CellInfo>;
+export type Overrides = Record<string, { opp: string; spread: number; loc: string }>;
 
 const DOUBLE_WEEKS = new Set([9, 12, 13, 14, 15, 16]);
 const LS_KEY = 'survivor_pool_planner_state_v1';
@@ -36,10 +38,18 @@ function starString(fv: number): string {
   return s || '–';
 }
 
-export default function BoardClient({ seedData: _seedData }: BoardClientProps) {
+export default function BoardClient({ seedData: _seedData, oddsCache }: BoardClientProps) {
   const router = useRouter();
   const teams = getTeams();
   const doubleWeeks = getDoubleWeeks();
+
+  // Build lookup: "TEAMCODE_week" → LiveOddsEntry
+  const liveOddsMap = new Map<string, { spread: number; winPct: number }>();
+  if (oddsCache) {
+    for (const e of oddsCache.entries) {
+      liveOddsMap.set(`${e.teamCode}_${e.week}`, { spread: e.spread, winPct: e.winPct });
+    }
+  }
 
   const [playerName, setPlayerName] = useState('');
   const [picks, setPicks] = useState<Picks>({});
@@ -76,10 +86,12 @@ export default function BoardClient({ seedData: _seedData }: BoardClientProps) {
 
   function getCell(team: string, week: number): CellInfo | null {
     const key = `${team}_${week}`;
-    if (overrides[key]) return overrides[key];
+    if (overrides[key]) return { ...overrides[key], isLive: false };
     const entry = getWeekEntry(team, week);
     if (!entry) return null;
-    return { opp: entry.opp, spread: entry.fallbackSpread, loc: entry.loc };
+    const live = liveOddsMap.get(key);
+    if (live) return { opp: entry.opp, spread: live.spread, loc: entry.loc, isLive: true };
+    return { opp: entry.opp, spread: entry.fallbackSpread, loc: entry.loc, isLive: false };
   }
 
   function usedTeamsMap(): Record<string, number> {
@@ -219,6 +231,11 @@ export default function BoardClient({ seedData: _seedData }: BoardClientProps) {
       <p className="info-banner">
         📎 Picks save in <b>this browser automatically</b> (localStorage). Use &ldquo;Export to Excel&rdquo; for a portable backup.
         &nbsp;Drag teams onto a week (or tap a team, then tap a slot). One team per contest, ever. Weeks 9, 12&ndash;16 need <b>two</b> correct picks.
+        &nbsp;·&nbsp;
+        {oddsCache
+          ? <>📡 Live odds as of {new Date(oddsCache.fetchedAt).toLocaleString('en-US', { weekday: 'short', hour: 'numeric', minute: '2-digit' })}. Win% marked <b>~</b> are preseason estimates.</>
+          : <>📊 Odds: preseason estimates only (~ prefix). Live odds unavailable.</>
+        }
       </p>
 
       <div className="topbar">

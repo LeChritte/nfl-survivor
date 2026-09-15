@@ -1,53 +1,37 @@
 import type { TeamSchedule } from '@/lib/schedule';
-import { getByeTeams } from '@/lib/schedule';
-import { picksForWeek } from '@/lib/rules';
-import type { Pick } from '@/lib/rules';
 import TeamChip from './TeamChip';
 
 interface TeamPoolProps {
   teams: TeamSchedule[];
-  picks: Pick[];
-  usedTeamCodes: string[];
+  usedMap: Record<string, number>;
   selectedTeam: string | null;
-  currentWeek: number;
   onSelect: (code: string) => void;
-  onDragStart: (code: string) => void;
 }
 
-export default function TeamPool({
-  teams,
-  picks,
-  usedTeamCodes,
-  selectedTeam,
-  currentWeek,
-  onSelect,
-  onDragStart,
-}: TeamPoolProps) {
-  const byeTeams = getByeTeams(currentWeek);
-  const sorted = [...teams].sort((a, b) => b.futureVal - a.futureVal);
-
-  function getUsedWeek(code: string): number | undefined {
-    const p = picks.find((pk) => pk.teamCode === code);
-    return p?.week;
-  }
+export default function TeamPool({ teams, usedMap, selectedTeam, onSelect }: TeamPoolProps) {
+  const sorted = [...teams].sort((a, b) => (b.futureVal - a.futureVal) || a.code.localeCompare(b.code));
 
   return (
-    <div className="p-2">
-      <div className="grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-4 gap-1.5">
-        {sorted.map((team) => (
+    <div className="panel pool">
+      <h2>All 32 Teams</h2>
+      <div className="teamgrid">
+        {sorted.map(team => (
           <TeamChip
             key={team.code}
-            team={team}
-            isUsed={usedTeamCodes.includes(team.code)}
-            usedWeek={getUsedWeek(team.code)}
+            code={team.code}
+            fullName={team.fullName}
+            futureVal={team.futureVal}
+            isUsed={team.code in usedMap}
+            usedWeek={usedMap[team.code]}
             isSelected={selectedTeam === team.code}
-            isByeThisWeek={byeTeams.includes(team.code)}
-            onClick={() => {
-              if (!usedTeamCodes.includes(team.code)) onSelect(team.code);
-            }}
-            onDragStart={() => onDragStart(team.code)}
+            onSelect={() => { if (!(team.code in usedMap)) onSelect(team.code); }}
           />
         ))}
+      </div>
+      <div className="legend">
+        <div className="row"><span className="dot" style={{ background: 'var(--gold)' }}></span> Stars = &ldquo;Future Value&rdquo; &mdash; how much better this team&apos;s spots get later. Save high-star teams for weeks 9 &amp; 12&ndash;16.</div>
+        <div className="row"><span className="dot" style={{ background: 'var(--good)' }}></span> Win% badge: green ≥75%, yellow 60&ndash;75%, red &lt;60% (rough model from the spread, not a guarantee).</div>
+        <div className="row">Tap a team then tap a slot on mobile. Byes block that team for that week automatically.</div>
       </div>
     </div>
   );

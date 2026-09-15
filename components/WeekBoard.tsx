@@ -1,46 +1,49 @@
 import type { TeamSchedule } from '@/lib/schedule';
 import { getByeTeams } from '@/lib/schedule';
-import { picksForWeek } from '@/lib/rules';
-import type { Pick } from '@/lib/rules';
+import type { CellInfo, Picks } from './BoardClient';
 import WeekCard from './WeekCard';
 
 interface WeekBoardProps {
-  weeks: number[];
-  picks: Pick[];
+  picks: Picks;
   selectedTeam: string | null;
   doubleWeeks: number[];
   teams: TeamSchedule[];
-  onSlotTap: (week: number, slot: number) => void;
-  onRemovePick: (week: number, slot: number) => void;
-  onDrop: (week: number, slot: number) => void;
+  getCell: (team: string, week: number) => CellInfo | null;
+  onSlotTap: (week: number) => void;
+  onUnassign: (week: number, team: string) => void;
+  onDropTeam: (team: string, week: number) => void;
+  onEditCell: (team: string, week: number) => void;
+  onShowToast: (msg: string) => void;
 }
 
 export default function WeekBoard({
-  weeks,
-  picks,
-  selectedTeam,
-  doubleWeeks,
-  teams,
-  onSlotTap,
-  onRemovePick,
-  onDrop,
+  picks, selectedTeam, doubleWeeks, teams, getCell,
+  onSlotTap, onUnassign, onDropTeam, onEditCell, onShowToast,
 }: WeekBoardProps) {
+  const weeks = Array.from({ length: 18 }, (_, i) => i + 1);
+
   return (
-    <div className="flex flex-col gap-2 p-2">
-      {weeks.map((week) => (
-        <WeekCard
-          key={week}
-          week={week}
-          isDouble={doubleWeeks.includes(week)}
-          picks={picksForWeek(picks, week)}
-          selectedTeam={selectedTeam}
-          teams={teams}
-          byeTeams={getByeTeams(week)}
-          onSlotTap={(slot) => onSlotTap(week, slot)}
-          onRemovePick={(slot) => onRemovePick(week, slot)}
-          onDrop={(slot) => onDrop(week, slot)}
-        />
-      ))}
+    <div className="panel">
+      <h2>Weeks 1–18</h2>
+      <div className="weeks">
+        {weeks.map(week => (
+          <WeekCard
+            key={week}
+            week={week}
+            isDouble={doubleWeeks.includes(week)}
+            weekPicks={picks[String(week)] || []}
+            selectedTeam={selectedTeam}
+            teams={teams}
+            byeTeams={getByeTeams(week)}
+            getCell={getCell}
+            onSlotTap={() => onSlotTap(week)}
+            onUnassign={(team) => onUnassign(week, team)}
+            onDropTeam={(team) => onDropTeam(team, week)}
+            onEditCell={(team) => onEditCell(team, week)}
+            onShowToast={onShowToast}
+          />
+        ))}
+      </div>
     </div>
   );
 }

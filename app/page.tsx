@@ -28,29 +28,24 @@ export default function Home() {
   if (!checked) return null;
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
-      <div className="w-full max-w-sm bg-gray-900 rounded-2xl p-8 shadow-xl">
-        <h1 className="text-2xl font-bold text-center mb-2">🏈 NFL Survivor Pool</h1>
-        <p className="text-gray-400 text-center text-sm mb-8">
-          Pick one team per week. Don&apos;t lose. Don&apos;t repeat.
-        </p>
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <label className="text-sm font-medium text-gray-300">What&apos;s your name?</label>
+    <div className="wrap" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div className="panel" style={{ maxWidth: 360, width: '100%' }}>
+        <h1>🏈 Survivor Pool Planner</h1>
+        <p className="sub" style={{ marginTop: 8 }}>Enter your name to get started.</p>
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           <input
             type="text"
+            placeholder="Your name (e.g. Andrew)"
             value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="e.g. Andrew"
+            onChange={e => setName(e.target.value)}
+            style={{
+              font: 'inherit', fontSize: '.9rem', padding: '9px 12px', borderRadius: 8,
+              border: '1px solid var(--border)', background: 'var(--panel-2)',
+              color: 'var(--text)', outline: 'none',
+            }}
             autoFocus
-            className="w-full px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-500 text-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
           />
-          <button
-            type="submit"
-            disabled={!name.trim()}
-            className="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 disabled:opacity-40 disabled:cursor-not-allowed text-black font-bold text-lg transition-colors"
-          >
-            Enter Pool →
-          </button>
+          <button type="submit" className="primary">Enter Pool →</button>
         </form>
       </div>
     </div>

@@ -1,0 +1,2961 @@
+{
+  "meta": {
+    "source": "Manually transcribed and cross-validated from a Vegas odds/schedule screenshot, dated ~Sept 2026 (preseason lines).",
+    "note": "The 'opp'/'loc' fields (the actual matchups, home/away, and bye weeks) are fixed for the season and safe to use as-is. The 'fallbackSpread' fields are a SNAPSHOT of the point spread at transcription time and will be stale by the time this app is used in-season -- they exist only as a fallback/seed value for weeks the live odds API can't yet cover (e.g. weeks far in the future) or if the API call fails. Always prefer live odds when available.",
+    "doubleWeeks": [
+      9,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "totalWeeks": 18
+  },
+  "teams": {
+    "LAC": {
+      "fullName": "Los Angeles Chargers",
+      "futureVal": 2.0,
+      "weeks": {
+        "1": {
+          "opp": "ARI",
+          "loc": "H",
+          "fallbackSpread": -9.5
+        },
+        "2": {
+          "opp": "LV",
+          "loc": "H",
+          "fallbackSpread": -7
+        },
+        "3": {
+          "opp": "BUF",
+          "loc": "A",
+          "fallbackSpread": 3
+        },
+        "4": {
+          "opp": "SEA",
+          "loc": "A",
+          "fallbackSpread": 3
+        },
+        "5": {
+          "opp": "DEN",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "6": {
+          "opp": "KC",
+          "loc": "A",
+          "fallbackSpread": 2.5
+        },
+        "7": null,
+        "8": {
+          "opp": "LAR",
+          "loc": "A",
+          "fallbackSpread": 4.5
+        },
+        "9": {
+          "opp": "HOU",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "10": {
+          "opp": "BAL",
+          "loc": "A",
+          "fallbackSpread": 3
+        },
+        "11": {
+          "opp": "NYJ",
+          "loc": "H",
+          "fallbackSpread": -10
+        },
+        "12": {
+          "opp": "NE",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "13": {
+          "opp": "TB",
+          "loc": "A",
+          "fallbackSpread": -1.5
+        },
+        "14": {
+          "opp": "LV",
+          "loc": "A",
+          "fallbackSpread": -5
+        },
+        "15": {
+          "opp": "SF",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "16": {
+          "opp": "MIA",
+          "loc": "A",
+          "fallbackSpread": -7
+        },
+        "17": {
+          "opp": "KC",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "18": {
+          "opp": "DEN",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        }
+      }
+    },
+    "JAX": {
+      "fullName": "Jacksonville Jaguars",
+      "futureVal": 1.0,
+      "weeks": {
+        "1": {
+          "opp": "CLE",
+          "loc": "H",
+          "fallbackSpread": -8.5
+        },
+        "2": {
+          "opp": "DEN",
+          "loc": "A",
+          "fallbackSpread": 3
+        },
+        "3": {
+          "opp": "NE",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "4": {
+          "opp": "CIN",
+          "loc": "A",
+          "fallbackSpread": 2.5
+        },
+        "5": {
+          "opp": "PHI",
+          "loc": "N",
+          "fallbackSpread": 1.5
+        },
+        "6": {
+          "opp": "HOU",
+          "loc": "N",
+          "fallbackSpread": 1.5
+        },
+        "7": null,
+        "8": {
+          "opp": "IND",
+          "loc": "H",
+          "fallbackSpread": -4.5
+        },
+        "9": {
+          "opp": "BAL",
+          "loc": "A",
+          "fallbackSpread": 4.5
+        },
+        "10": {
+          "opp": "TEN",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "11": {
+          "opp": "NYJ",
+          "loc": "A",
+          "fallbackSpread": -5
+        },
+        "12": {
+          "opp": "TEN",
+          "loc": "H",
+          "fallbackSpread": -5.5
+        },
+        "13": {
+          "opp": "CHI",
+          "loc": "A",
+          "fallbackSpread": 3
+        },
+        "14": {
+          "opp": "PIT",
+          "loc": "H",
+          "fallbackSpread": -3
+        },
+        "15": {
+          "opp": "HOU",
+          "loc": "A",
+          "fallbackSpread": 3
+        },
+        "16": {
+          "opp": "DAL",
+          "loc": "A",
+          "fallbackSpread": -3.5
+        },
+        "17": {
+          "opp": "WSH",
+          "loc": "H",
+          "fallbackSpread": -3.5
+        },
+        "18": {
+          "opp": "IND",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        }
+      }
+    },
+    "DET": {
+      "fullName": "Detroit Lions",
+      "futureVal": 3.5,
+      "weeks": {
+        "1": {
+          "opp": "NO",
+          "loc": "H",
+          "fallbackSpread": -7
+        },
+        "2": {
+          "opp": "BUF",
+          "loc": "A",
+          "fallbackSpread": 4.5
+        },
+        "3": {
+          "opp": "NYJ",
+          "loc": "H",
+          "fallbackSpread": -10
+        },
+        "4": {
+          "opp": "CAR",
+          "loc": "A",
+          "fallbackSpread": -3
+        },
+        "5": {
+          "opp": "ARI",
+          "loc": "A",
+          "fallbackSpread": -8.5
+        },
+        "6": null,
+        "7": {
+          "opp": "GB",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "8": {
+          "opp": "MIN",
+          "loc": "H",
+          "fallbackSpread": -5
+        },
+        "9": {
+          "opp": "MIA",
+          "loc": "A",
+          "fallbackSpread": -6.5
+        },
+        "10": {
+          "opp": "NE",
+          "loc": "N",
+          "fallbackSpread": 0
+        },
+        "11": {
+          "opp": "TB",
+          "loc": "H",
+          "fallbackSpread": -4.5
+        },
+        "12": {
+          "opp": "CHI",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "13": {
+          "opp": "ATL",
+          "loc": "A",
+          "fallbackSpread": -3.5
+        },
+        "14": {
+          "opp": "TEN",
+          "loc": "H",
+          "fallbackSpread": -7.5
+        },
+        "15": {
+          "opp": "MIN",
+          "loc": "A",
+          "fallbackSpread": -2
+        },
+        "16": {
+          "opp": "NYG",
+          "loc": "H",
+          "fallbackSpread": -5.5
+        },
+        "17": {
+          "opp": "CHI",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "18": {
+          "opp": "GB",
+          "loc": "A",
+          "fallbackSpread": 2.5
+        }
+      }
+    },
+    "PIT": {
+      "fullName": "Pittsburgh Steelers",
+      "futureVal": 1.0,
+      "weeks": {
+        "1": {
+          "opp": "ATL",
+          "loc": "H",
+          "fallbackSpread": -6.5
+        },
+        "2": {
+          "opp": "NE",
+          "loc": "A",
+          "fallbackSpread": -3
+        },
+        "3": {
+          "opp": "CIN",
+          "loc": "H",
+          "fallbackSpread": 1.5
+        },
+        "4": {
+          "opp": "CLE",
+          "loc": "A",
+          "fallbackSpread": -6
+        },
+        "5": {
+          "opp": "IND",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "6": {
+          "opp": "TB",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "7": {
+          "opp": "NO",
+          "loc": "N",
+          "fallbackSpread": -2
+        },
+        "8": {
+          "opp": "CLE",
+          "loc": "H",
+          "fallbackSpread": -6
+        },
+        "9": null,
+        "10": {
+          "opp": "CIN",
+          "loc": "A",
+          "fallbackSpread": 3.5
+        },
+        "11": {
+          "opp": "PHI",
+          "loc": "A",
+          "fallbackSpread": 5.5
+        },
+        "12": {
+          "opp": "DEN",
+          "loc": "H",
+          "fallbackSpread": 1.5
+        },
+        "13": {
+          "opp": "HOU",
+          "loc": "H",
+          "fallbackSpread": 1.5
+        },
+        "14": {
+          "opp": "JAX",
+          "loc": "A",
+          "fallbackSpread": 3
+        },
+        "15": {
+          "opp": "BAL",
+          "loc": "H",
+          "fallbackSpread": 2.5
+        },
+        "16": {
+          "opp": "CAR",
+          "loc": "H",
+          "fallbackSpread": -3.5
+        },
+        "17": {
+          "opp": "TEN",
+          "loc": "A",
+          "fallbackSpread": -1.5
+        },
+        "18": {
+          "opp": "BAL",
+          "loc": "H",
+          "fallbackSpread": 5.5
+        }
+      }
+    },
+    "PHI": {
+      "fullName": "Philadelphia Eagles",
+      "futureVal": 2.5,
+      "weeks": {
+        "1": {
+          "opp": "WSH",
+          "loc": "H",
+          "fallbackSpread": -6
+        },
+        "2": {
+          "opp": "TEN",
+          "loc": "A",
+          "fallbackSpread": -7
+        },
+        "3": {
+          "opp": "CHI",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "4": {
+          "opp": "LAR",
+          "loc": "H",
+          "fallbackSpread": 2.5
+        },
+        "5": {
+          "opp": "JAX",
+          "loc": "N",
+          "fallbackSpread": -1.5
+        },
+        "6": {
+          "opp": "CAR",
+          "loc": "H",
+          "fallbackSpread": -6.5
+        },
+        "7": {
+          "opp": "DAL",
+          "loc": "H",
+          "fallbackSpread": -3
+        },
+        "8": {
+          "opp": "WSH",
+          "loc": "A",
+          "fallbackSpread": -2.5
+        },
+        "9": {
+          "opp": "NYG",
+          "loc": "H",
+          "fallbackSpread": -5.5
+        },
+        "10": null,
+        "11": {
+          "opp": "PIT",
+          "loc": "H",
+          "fallbackSpread": -5.5
+        },
+        "12": {
+          "opp": "DAL",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "13": {
+          "opp": "ARI",
+          "loc": "A",
+          "fallbackSpread": -8.5
+        },
+        "14": {
+          "opp": "IND",
+          "loc": "H",
+          "fallbackSpread": -5.5
+        },
+        "15": {
+          "opp": "SEA",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "16": {
+          "opp": "HOU",
+          "loc": "H",
+          "fallbackSpread": -3
+        },
+        "17": {
+          "opp": "SF",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "18": {
+          "opp": "NYG",
+          "loc": "A",
+          "fallbackSpread": -3
+        }
+      }
+    },
+    "CIN": {
+      "fullName": "Cincinnati Bengals",
+      "futureVal": 2.0,
+      "weeks": {
+        "1": {
+          "opp": "TB",
+          "loc": "H",
+          "fallbackSpread": -6
+        },
+        "2": {
+          "opp": "HOU",
+          "loc": "A",
+          "fallbackSpread": 3.5
+        },
+        "3": {
+          "opp": "PIT",
+          "loc": "A",
+          "fallbackSpread": -1.5
+        },
+        "4": {
+          "opp": "JAX",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "5": {
+          "opp": "MIA",
+          "loc": "A",
+          "fallbackSpread": -6
+        },
+        "6": null,
+        "7": {
+          "opp": "BAL",
+          "loc": "A",
+          "fallbackSpread": 3.5
+        },
+        "8": {
+          "opp": "TEN",
+          "loc": "H",
+          "fallbackSpread": -6.5
+        },
+        "9": {
+          "opp": "ATL",
+          "loc": "N",
+          "fallbackSpread": -4.5
+        },
+        "10": {
+          "opp": "PIT",
+          "loc": "H",
+          "fallbackSpread": -3.5
+        },
+        "11": {
+          "opp": "WSH",
+          "loc": "A",
+          "fallbackSpread": -1.5
+        },
+        "12": {
+          "opp": "NO",
+          "loc": "H",
+          "fallbackSpread": -6.5
+        },
+        "13": {
+          "opp": "CLE",
+          "loc": "A",
+          "fallbackSpread": -4.5
+        },
+        "14": {
+          "opp": "KC",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "15": {
+          "opp": "CAR",
+          "loc": "A",
+          "fallbackSpread": -2.5
+        },
+        "16": {
+          "opp": "IND",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "17": {
+          "opp": "BAL",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "18": {
+          "opp": "CLE",
+          "loc": "A",
+          "fallbackSpread": -7.5
+        }
+      }
+    },
+    "LAR": {
+      "fullName": "Los Angeles Rams",
+      "futureVal": 5.0,
+      "weeks": {
+        "1": {
+          "opp": "SF",
+          "loc": "N",
+          "fallbackSpread": -3.5
+        },
+        "2": {
+          "opp": "NYG",
+          "loc": "H",
+          "fallbackSpread": -7
+        },
+        "3": {
+          "opp": "DEN",
+          "loc": "A",
+          "fallbackSpread": -3
+        },
+        "4": {
+          "opp": "PHI",
+          "loc": "A",
+          "fallbackSpread": -2.5
+        },
+        "5": {
+          "opp": "BUF",
+          "loc": "H",
+          "fallbackSpread": -5
+        },
+        "6": {
+          "opp": "ARI",
+          "loc": "H",
+          "fallbackSpread": -14
+        },
+        "7": {
+          "opp": "LV",
+          "loc": "A",
+          "fallbackSpread": -8
+        },
+        "8": {
+          "opp": "LAC",
+          "loc": "H",
+          "fallbackSpread": -4.5
+        },
+        "9": {
+          "opp": "WSH",
+          "loc": "A",
+          "fallbackSpread": -5
+        },
+        "10": {
+          "opp": "ARI",
+          "loc": "N",
+          "fallbackSpread": -10.5
+        },
+        "11": null,
+        "12": {
+          "opp": "GB",
+          "loc": "H",
+          "fallbackSpread": -5.5
+        },
+        "13": {
+          "opp": "KC",
+          "loc": "H",
+          "fallbackSpread": -4.5
+        },
+        "14": {
+          "opp": "SF",
+          "loc": "A",
+          "fallbackSpread": -2
+        },
+        "15": {
+          "opp": "DAL",
+          "loc": "A",
+          "fallbackSpread": -7
+        },
+        "16": {
+          "opp": "SEA",
+          "loc": "A",
+          "fallbackSpread": 0
+        },
+        "17": {
+          "opp": "TB",
+          "loc": "A",
+          "fallbackSpread": -4
+        },
+        "18": {
+          "opp": "SEA",
+          "loc": "H",
+          "fallbackSpread": -3
+        }
+      }
+    },
+    "SEA": {
+      "fullName": "Seattle Seahawks",
+      "futureVal": 3.5,
+      "weeks": {
+        "1": {
+          "opp": "NE",
+          "loc": "H",
+          "fallbackSpread": -3
+        },
+        "2": {
+          "opp": "ARI",
+          "loc": "A",
+          "fallbackSpread": -4.5
+        },
+        "3": {
+          "opp": "WSH",
+          "loc": "H",
+          "fallbackSpread": -3.5
+        },
+        "4": {
+          "opp": "LAC",
+          "loc": "H",
+          "fallbackSpread": -3
+        },
+        "5": {
+          "opp": "SF",
+          "loc": "H",
+          "fallbackSpread": -3.5
+        },
+        "6": {
+          "opp": "DEN",
+          "loc": "A",
+          "fallbackSpread": -1.5
+        },
+        "7": {
+          "opp": "KC",
+          "loc": "H",
+          "fallbackSpread": -3
+        },
+        "8": {
+          "opp": "CHI",
+          "loc": "H",
+          "fallbackSpread": -5
+        },
+        "9": {
+          "opp": "ARI",
+          "loc": "N",
+          "fallbackSpread": -13.5
+        },
+        "10": {
+          "opp": "LV",
+          "loc": "A",
+          "fallbackSpread": -7
+        },
+        "11": null,
+        "12": {
+          "opp": "SF",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "13": {
+          "opp": "DAL",
+          "loc": "H",
+          "fallbackSpread": -4.5
+        },
+        "14": {
+          "opp": "NYG",
+          "loc": "H",
+          "fallbackSpread": -7.5
+        },
+        "15": {
+          "opp": "PHI",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "16": {
+          "opp": "LAR",
+          "loc": "H",
+          "fallbackSpread": 0
+        },
+        "17": {
+          "opp": "CAR",
+          "loc": "A",
+          "fallbackSpread": -5.5
+        },
+        "18": {
+          "opp": "LAR",
+          "loc": "A",
+          "fallbackSpread": 3
+        }
+      }
+    },
+    "DAL": {
+      "fullName": "Dallas Cowboys",
+      "futureVal": 2.0,
+      "weeks": {
+        "1": {
+          "opp": "NYG",
+          "loc": "A",
+          "fallbackSpread": -3.5
+        },
+        "2": {
+          "opp": "WSH",
+          "loc": "H",
+          "fallbackSpread": 2.5
+        },
+        "3": {
+          "opp": "BAL",
+          "loc": "N",
+          "fallbackSpread": -2.5
+        },
+        "4": {
+          "opp": "HOU",
+          "loc": "A",
+          "fallbackSpread": -3.5
+        },
+        "5": {
+          "opp": "TB",
+          "loc": "H",
+          "fallbackSpread": -3.5
+        },
+        "6": {
+          "opp": "GB",
+          "loc": "A",
+          "fallbackSpread": 3
+        },
+        "7": {
+          "opp": "PHI",
+          "loc": "A",
+          "fallbackSpread": 3
+        },
+        "8": {
+          "opp": "ARI",
+          "loc": "H",
+          "fallbackSpread": -10.5
+        },
+        "9": {
+          "opp": "IND",
+          "loc": "A",
+          "fallbackSpread": -1.5
+        },
+        "10": {
+          "opp": "SF",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "11": {
+          "opp": "TEN",
+          "loc": "H",
+          "fallbackSpread": -7
+        },
+        "12": {
+          "opp": "CAR",
+          "loc": "A",
+          "fallbackSpread": -1.5
+        },
+        "13": {
+          "opp": "SEA",
+          "loc": "A",
+          "fallbackSpread": 4.5
+        },
+        "14": null,
+        "15": {
+          "opp": "LAR",
+          "loc": "A",
+          "fallbackSpread": 7
+        },
+        "16": {
+          "opp": "JAX",
+          "loc": "H",
+          "fallbackSpread": -3
+        },
+        "17": {
+          "opp": "NYG",
+          "loc": "H",
+          "fallbackSpread": -5
+        },
+        "18": {
+          "opp": "WSH",
+          "loc": "A",
+          "fallbackSpread": -1.5
+        }
+      }
+    },
+    "BAL": {
+      "fullName": "Baltimore Ravens",
+      "futureVal": 4.0,
+      "weeks": {
+        "1": {
+          "opp": "IND",
+          "loc": "A",
+          "fallbackSpread": -3
+        },
+        "2": {
+          "opp": "NO",
+          "loc": "H",
+          "fallbackSpread": -8.5
+        },
+        "3": {
+          "opp": "DAL",
+          "loc": "A",
+          "fallbackSpread": -2.5
+        },
+        "4": {
+          "opp": "TEN",
+          "loc": "H",
+          "fallbackSpread": -8.5
+        },
+        "5": {
+          "opp": "ATL",
+          "loc": "A",
+          "fallbackSpread": -4.5
+        },
+        "6": {
+          "opp": "CLE",
+          "loc": "A",
+          "fallbackSpread": -7
+        },
+        "7": {
+          "opp": "CIN",
+          "loc": "H",
+          "fallbackSpread": -3.5
+        },
+        "8": {
+          "opp": "BUF",
+          "loc": "A",
+          "fallbackSpread": 2.5
+        },
+        "9": {
+          "opp": "JAX",
+          "loc": "H",
+          "fallbackSpread": -4.5
+        },
+        "10": {
+          "opp": "LAC",
+          "loc": "H",
+          "fallbackSpread": -3
+        },
+        "11": {
+          "opp": "CAR",
+          "loc": "A",
+          "fallbackSpread": -4.5
+        },
+        "12": {
+          "opp": "HOU",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "13": null,
+        "14": {
+          "opp": "TB",
+          "loc": "H",
+          "fallbackSpread": -6
+        },
+        "15": {
+          "opp": "PIT",
+          "loc": "A",
+          "fallbackSpread": -2.5
+        },
+        "16": {
+          "opp": "CLE",
+          "loc": "H",
+          "fallbackSpread": -10
+        },
+        "17": {
+          "opp": "CIN",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "18": {
+          "opp": "PIT",
+          "loc": "A",
+          "fallbackSpread": 5.5
+        }
+      }
+    },
+    "CHI": {
+      "fullName": "Chicago Bears",
+      "futureVal": 2.5,
+      "weeks": {
+        "1": {
+          "opp": "CAR",
+          "loc": "A",
+          "fallbackSpread": -3
+        },
+        "2": {
+          "opp": "MIN",
+          "loc": "H",
+          "fallbackSpread": -5.5
+        },
+        "3": {
+          "opp": "PHI",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "4": {
+          "opp": "NYJ",
+          "loc": "H",
+          "fallbackSpread": -9
+        },
+        "5": {
+          "opp": "GB",
+          "loc": "A",
+          "fallbackSpread": 3.5
+        },
+        "6": {
+          "opp": "ATL",
+          "loc": "A",
+          "fallbackSpread": -3
+        },
+        "7": {
+          "opp": "NE",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "8": {
+          "opp": "SEA",
+          "loc": "A",
+          "fallbackSpread": 5
+        },
+        "9": {
+          "opp": "TB",
+          "loc": "H",
+          "fallbackSpread": -3.5
+        },
+        "10": null,
+        "11": {
+          "opp": "NO",
+          "loc": "A",
+          "fallbackSpread": -6.5
+        },
+        "12": {
+          "opp": "DET",
+          "loc": "A",
+          "fallbackSpread": 2.5
+        },
+        "13": {
+          "opp": "JAX",
+          "loc": "H",
+          "fallbackSpread": -3
+        },
+        "14": {
+          "opp": "MIA",
+          "loc": "A",
+          "fallbackSpread": -5
+        },
+        "15": {
+          "opp": "BUF",
+          "loc": "A",
+          "fallbackSpread": 4
+        },
+        "16": {
+          "opp": "GB",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "17": {
+          "opp": "DET",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "18": {
+          "opp": "MIN",
+          "loc": "A",
+          "fallbackSpread": -5
+        }
+      }
+    },
+    "LV": {
+      "fullName": "Las Vegas Raiders",
+      "futureVal": 0.0,
+      "weeks": {
+        "1": {
+          "opp": "MIA",
+          "loc": "H",
+          "fallbackSpread": -3
+        },
+        "2": {
+          "opp": "LAC",
+          "loc": "A",
+          "fallbackSpread": 4
+        },
+        "3": {
+          "opp": "NO",
+          "loc": "A",
+          "fallbackSpread": -1.5
+        },
+        "4": {
+          "opp": "KC",
+          "loc": "H",
+          "fallbackSpread": 5.5
+        },
+        "5": {
+          "opp": "NE",
+          "loc": "A",
+          "fallbackSpread": 8
+        },
+        "6": {
+          "opp": "BUF",
+          "loc": "H",
+          "fallbackSpread": 7
+        },
+        "7": {
+          "opp": "LAR",
+          "loc": "H",
+          "fallbackSpread": 7
+        },
+        "8": {
+          "opp": "NYJ",
+          "loc": "A",
+          "fallbackSpread": 9
+        },
+        "9": {
+          "opp": "SF",
+          "loc": "A",
+          "fallbackSpread": 9
+        },
+        "10": {
+          "opp": "SEA",
+          "loc": "H",
+          "fallbackSpread": 7
+        },
+        "11": {
+          "opp": "DEN",
+          "loc": "H",
+          "fallbackSpread": 8
+        },
+        "12": {
+          "opp": "CLE",
+          "loc": "A",
+          "fallbackSpread": 2
+        },
+        "13": null,
+        "14": {
+          "opp": "LAC",
+          "loc": "H",
+          "fallbackSpread": 5
+        },
+        "15": {
+          "opp": "DEN",
+          "loc": "H",
+          "fallbackSpread": 4.5
+        },
+        "16": {
+          "opp": "TEN",
+          "loc": "H",
+          "fallbackSpread": 1.5
+        },
+        "17": {
+          "opp": "ARI",
+          "loc": "A",
+          "fallbackSpread": -1.5
+        },
+        "18": {
+          "opp": "KC",
+          "loc": "H",
+          "fallbackSpread": 8.5
+        }
+      }
+    },
+    "MIN": {
+      "fullName": "Minnesota Vikings",
+      "futureVal": 1.5,
+      "weeks": {
+        "1": {
+          "opp": "GB",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "2": {
+          "opp": "CHI",
+          "loc": "A",
+          "fallbackSpread": 5.5
+        },
+        "3": {
+          "opp": "TB",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "4": {
+          "opp": "MIA",
+          "loc": "H",
+          "fallbackSpread": -7.5
+        },
+        "5": {
+          "opp": "NO",
+          "loc": "A",
+          "fallbackSpread": -1.5
+        },
+        "6": null,
+        "7": {
+          "opp": "IND",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "8": {
+          "opp": "DET",
+          "loc": "A",
+          "fallbackSpread": 5
+        },
+        "9": {
+          "opp": "BUF",
+          "loc": "H",
+          "fallbackSpread": 3.5
+        },
+        "10": {
+          "opp": "GB",
+          "loc": "A",
+          "fallbackSpread": 4.5
+        },
+        "11": {
+          "opp": "SF",
+          "loc": "N",
+          "fallbackSpread": 3.5
+        },
+        "12": {
+          "opp": "ATL",
+          "loc": "H",
+          "fallbackSpread": -4
+        },
+        "13": {
+          "opp": "CAR",
+          "loc": "H",
+          "fallbackSpread": -3.5
+        },
+        "14": {
+          "opp": "NE",
+          "loc": "A",
+          "fallbackSpread": 4.5
+        },
+        "15": {
+          "opp": "DET",
+          "loc": "H",
+          "fallbackSpread": 2
+        },
+        "16": {
+          "opp": "WSH",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "17": {
+          "opp": "NYJ",
+          "loc": "A",
+          "fallbackSpread": -3
+        },
+        "18": {
+          "opp": "CHI",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        }
+      }
+    },
+    "KC": {
+      "fullName": "Kansas City Chiefs",
+      "futureVal": 3.5,
+      "weeks": {
+        "1": {
+          "opp": "DEN",
+          "loc": "H",
+          "fallbackSpread": -2
+        },
+        "2": {
+          "opp": "IND",
+          "loc": "H",
+          "fallbackSpread": -6.5
+        },
+        "3": {
+          "opp": "MIA",
+          "loc": "A",
+          "fallbackSpread": -7.5
+        },
+        "4": {
+          "opp": "LV",
+          "loc": "A",
+          "fallbackSpread": -5.5
+        },
+        "5": null,
+        "6": {
+          "opp": "LAC",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "7": {
+          "opp": "SEA",
+          "loc": "A",
+          "fallbackSpread": 3
+        },
+        "8": {
+          "opp": "DEN",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "9": {
+          "opp": "NYJ",
+          "loc": "H",
+          "fallbackSpread": -10
+        },
+        "10": {
+          "opp": "ATL",
+          "loc": "A",
+          "fallbackSpread": -4
+        },
+        "11": {
+          "opp": "ARI",
+          "loc": "H",
+          "fallbackSpread": -11.5
+        },
+        "12": {
+          "opp": "BUF",
+          "loc": "A",
+          "fallbackSpread": 2.5
+        },
+        "13": {
+          "opp": "LAR",
+          "loc": "A",
+          "fallbackSpread": 4.5
+        },
+        "14": {
+          "opp": "CIN",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "15": {
+          "opp": "NE",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "16": {
+          "opp": "SF",
+          "loc": "H",
+          "fallbackSpread": -3
+        },
+        "17": {
+          "opp": "LAC",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "18": {
+          "opp": "LV",
+          "loc": "H",
+          "fallbackSpread": -8.5
+        }
+      }
+    },
+    "TEN": {
+      "fullName": "Tennessee Titans",
+      "futureVal": 0.0,
+      "weeks": {
+        "1": {
+          "opp": "NYJ",
+          "loc": "H",
+          "fallbackSpread": -1
+        },
+        "2": {
+          "opp": "PHI",
+          "loc": "H",
+          "fallbackSpread": 7
+        },
+        "3": {
+          "opp": "NYG",
+          "loc": "A",
+          "fallbackSpread": 3
+        },
+        "4": {
+          "opp": "BAL",
+          "loc": "H",
+          "fallbackSpread": 8.5
+        },
+        "5": {
+          "opp": "HOU",
+          "loc": "H",
+          "fallbackSpread": 3.5
+        },
+        "6": {
+          "opp": "IND",
+          "loc": "A",
+          "fallbackSpread": 3.5
+        },
+        "7": {
+          "opp": "CLE",
+          "loc": "H",
+          "fallbackSpread": -3
+        },
+        "8": {
+          "opp": "CIN",
+          "loc": "A",
+          "fallbackSpread": 6.5
+        },
+        "9": null,
+        "10": {
+          "opp": "JAX",
+          "loc": "H",
+          "fallbackSpread": 2.5
+        },
+        "11": {
+          "opp": "DAL",
+          "loc": "A",
+          "fallbackSpread": 7
+        },
+        "12": {
+          "opp": "JAX",
+          "loc": "A",
+          "fallbackSpread": 5.5
+        },
+        "13": {
+          "opp": "WSH",
+          "loc": "H",
+          "fallbackSpread": 1.5
+        },
+        "14": {
+          "opp": "DET",
+          "loc": "A",
+          "fallbackSpread": 7.5
+        },
+        "15": {
+          "opp": "IND",
+          "loc": "H",
+          "fallbackSpread": 1.5
+        },
+        "16": {
+          "opp": "LV",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "17": {
+          "opp": "PIT",
+          "loc": "H",
+          "fallbackSpread": 1.5
+        },
+        "18": {
+          "opp": "HOU",
+          "loc": "A",
+          "fallbackSpread": 7
+        }
+      }
+    },
+    "BUF": {
+      "fullName": "Buffalo Bills",
+      "futureVal": 3.0,
+      "weeks": {
+        "1": {
+          "opp": "HOU",
+          "loc": "A",
+          "fallbackSpread": -1
+        },
+        "2": {
+          "opp": "DET",
+          "loc": "H",
+          "fallbackSpread": -4.5
+        },
+        "3": {
+          "opp": "LAC",
+          "loc": "H",
+          "fallbackSpread": -3
+        },
+        "4": {
+          "opp": "NE",
+          "loc": "H",
+          "fallbackSpread": -3.5
+        },
+        "5": {
+          "opp": "LAR",
+          "loc": "A",
+          "fallbackSpread": 3.5
+        },
+        "6": {
+          "opp": "LV",
+          "loc": "A",
+          "fallbackSpread": -7
+        },
+        "7": null,
+        "8": {
+          "opp": "BAL",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "9": {
+          "opp": "MIN",
+          "loc": "A",
+          "fallbackSpread": -3.5
+        },
+        "10": {
+          "opp": "NYJ",
+          "loc": "A",
+          "fallbackSpread": -7
+        },
+        "11": {
+          "opp": "MIA",
+          "loc": "H",
+          "fallbackSpread": -12
+        },
+        "12": {
+          "opp": "KC",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "13": {
+          "opp": "NE",
+          "loc": "A",
+          "fallbackSpread": 0.5
+        },
+        "14": {
+          "opp": "GB",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "15": {
+          "opp": "CHI",
+          "loc": "H",
+          "fallbackSpread": -4
+        },
+        "16": {
+          "opp": "DEN",
+          "loc": "A",
+          "fallbackSpread": -1.5
+        },
+        "17": {
+          "opp": "MIA",
+          "loc": "A",
+          "fallbackSpread": -7.5
+        },
+        "18": {
+          "opp": "NYJ",
+          "loc": "H",
+          "fallbackSpread": -10
+        }
+      }
+    },
+    "HOU": {
+      "fullName": "Houston Texans",
+      "futureVal": 1.5,
+      "weeks": {
+        "1": {
+          "opp": "BUF",
+          "loc": "H",
+          "fallbackSpread": 1
+        },
+        "2": {
+          "opp": "CIN",
+          "loc": "H",
+          "fallbackSpread": -3
+        },
+        "3": {
+          "opp": "IND",
+          "loc": "A",
+          "fallbackSpread": -1.5
+        },
+        "4": {
+          "opp": "DAL",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "5": {
+          "opp": "TEN",
+          "loc": "A",
+          "fallbackSpread": -3.5
+        },
+        "6": {
+          "opp": "JAX",
+          "loc": "N",
+          "fallbackSpread": -1.5
+        },
+        "7": {
+          "opp": "NYG",
+          "loc": "H",
+          "fallbackSpread": -5.5
+        },
+        "8": null,
+        "9": {
+          "opp": "LAC",
+          "loc": "A",
+          "fallbackSpread": 2.5
+        },
+        "10": {
+          "opp": "CLE",
+          "loc": "A",
+          "fallbackSpread": -4.5
+        },
+        "11": {
+          "opp": "IND",
+          "loc": "H",
+          "fallbackSpread": -5
+        },
+        "12": {
+          "opp": "BAL",
+          "loc": "A",
+          "fallbackSpread": -1.5
+        },
+        "13": {
+          "opp": "PIT",
+          "loc": "A",
+          "fallbackSpread": -1.5
+        },
+        "14": {
+          "opp": "WSH",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "15": {
+          "opp": "JAX",
+          "loc": "A",
+          "fallbackSpread": -3
+        },
+        "16": {
+          "opp": "PHI",
+          "loc": "H",
+          "fallbackSpread": 3
+        },
+        "17": {
+          "opp": "GB",
+          "loc": "H",
+          "fallbackSpread": 3
+        },
+        "18": {
+          "opp": "TEN",
+          "loc": "H",
+          "fallbackSpread": -7
+        }
+      }
+    },
+    "NYJ": {
+      "fullName": "New York Jets",
+      "futureVal": 0.5,
+      "weeks": {
+        "1": {
+          "opp": "TEN",
+          "loc": "A",
+          "fallbackSpread": 1
+        },
+        "2": {
+          "opp": "GB",
+          "loc": "H",
+          "fallbackSpread": 3.5
+        },
+        "3": {
+          "opp": "DET",
+          "loc": "A",
+          "fallbackSpread": 10
+        },
+        "4": {
+          "opp": "CHI",
+          "loc": "A",
+          "fallbackSpread": 9
+        },
+        "5": {
+          "opp": "CLE",
+          "loc": "H",
+          "fallbackSpread": -2
+        },
+        "6": {
+          "opp": "NE",
+          "loc": "A",
+          "fallbackSpread": 10
+        },
+        "7": {
+          "opp": "MIA",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "8": {
+          "opp": "LV",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "9": {
+          "opp": "KC",
+          "loc": "A",
+          "fallbackSpread": 10
+        },
+        "10": {
+          "opp": "BUF",
+          "loc": "H",
+          "fallbackSpread": 7
+        },
+        "11": {
+          "opp": "LAC",
+          "loc": "A",
+          "fallbackSpread": 10
+        },
+        "12": {
+          "opp": "MIA",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "13": null,
+        "14": {
+          "opp": "DEN",
+          "loc": "H",
+          "fallbackSpread": 5
+        },
+        "15": {
+          "opp": "ARI",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "16": {
+          "opp": "NE",
+          "loc": "H",
+          "fallbackSpread": 6.5
+        },
+        "17": {
+          "opp": "MIN",
+          "loc": "H",
+          "fallbackSpread": 3
+        },
+        "18": {
+          "opp": "BUF",
+          "loc": "A",
+          "fallbackSpread": 10
+        }
+      }
+    },
+    "DEN": {
+      "fullName": "Denver Broncos",
+      "futureVal": 2.0,
+      "weeks": {
+        "1": {
+          "opp": "KC",
+          "loc": "A",
+          "fallbackSpread": 2
+        },
+        "2": {
+          "opp": "JAX",
+          "loc": "H",
+          "fallbackSpread": -3
+        },
+        "3": {
+          "opp": "LAR",
+          "loc": "H",
+          "fallbackSpread": 3
+        },
+        "4": {
+          "opp": "SF",
+          "loc": "A",
+          "fallbackSpread": 2.5
+        },
+        "5": {
+          "opp": "LAC",
+          "loc": "H",
+          "fallbackSpread": 2.5
+        },
+        "6": {
+          "opp": "SEA",
+          "loc": "H",
+          "fallbackSpread": 1.5
+        },
+        "7": {
+          "opp": "ARI",
+          "loc": "A",
+          "fallbackSpread": -7.5
+        },
+        "8": {
+          "opp": "KC",
+          "loc": "A",
+          "fallbackSpread": -1.5
+        },
+        "9": {
+          "opp": "CAR",
+          "loc": "H",
+          "fallbackSpread": -3
+        },
+        "10": null,
+        "11": {
+          "opp": "LV",
+          "loc": "A",
+          "fallbackSpread": -8
+        },
+        "12": {
+          "opp": "PIT",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "13": {
+          "opp": "MIA",
+          "loc": "H",
+          "fallbackSpread": -9.5
+        },
+        "14": {
+          "opp": "NYJ",
+          "loc": "A",
+          "fallbackSpread": -5
+        },
+        "15": {
+          "opp": "LV",
+          "loc": "A",
+          "fallbackSpread": -4.5
+        },
+        "16": {
+          "opp": "BUF",
+          "loc": "H",
+          "fallbackSpread": 1.5
+        },
+        "17": {
+          "opp": "NE",
+          "loc": "A",
+          "fallbackSpread": -3
+        },
+        "18": {
+          "opp": "LAC",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        }
+      }
+    },
+    "GB": {
+      "fullName": "Green Bay Packers",
+      "futureVal": 3.0,
+      "weeks": {
+        "1": {
+          "opp": "MIN",
+          "loc": "H",
+          "fallbackSpread": 2.5
+        },
+        "2": {
+          "opp": "NYJ",
+          "loc": "H",
+          "fallbackSpread": -3.5
+        },
+        "3": {
+          "opp": "ATL",
+          "loc": "H",
+          "fallbackSpread": -7.5
+        },
+        "4": {
+          "opp": "TB",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "5": {
+          "opp": "CHI",
+          "loc": "A",
+          "fallbackSpread": -3.5
+        },
+        "6": {
+          "opp": "DAL",
+          "loc": "H",
+          "fallbackSpread": -3
+        },
+        "7": {
+          "opp": "DET",
+          "loc": "A",
+          "fallbackSpread": 2.5
+        },
+        "8": {
+          "opp": "CAR",
+          "loc": "H",
+          "fallbackSpread": -7
+        },
+        "9": {
+          "opp": "NE",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "10": {
+          "opp": "MIN",
+          "loc": "H",
+          "fallbackSpread": -4.5
+        },
+        "11": null,
+        "12": {
+          "opp": "LAR",
+          "loc": "A",
+          "fallbackSpread": 5.5
+        },
+        "13": {
+          "opp": "NO",
+          "loc": "A",
+          "fallbackSpread": -4.5
+        },
+        "14": {
+          "opp": "BUF",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "15": {
+          "opp": "MIA",
+          "loc": "H",
+          "fallbackSpread": -10.5
+        },
+        "16": {
+          "opp": "CHI",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "17": {
+          "opp": "HOU",
+          "loc": "H",
+          "fallbackSpread": -3
+        },
+        "18": {
+          "opp": "DET",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        }
+      }
+    },
+    "MIA": {
+      "fullName": "Miami Dolphins",
+      "futureVal": 0.0,
+      "weeks": {
+        "1": {
+          "opp": "LV",
+          "loc": "A",
+          "fallbackSpread": 3
+        },
+        "2": {
+          "opp": "SF",
+          "loc": "A",
+          "fallbackSpread": 13.5
+        },
+        "3": {
+          "opp": "KC",
+          "loc": "H",
+          "fallbackSpread": 7.5
+        },
+        "4": {
+          "opp": "MIN",
+          "loc": "A",
+          "fallbackSpread": 7.5
+        },
+        "5": {
+          "opp": "CIN",
+          "loc": "H",
+          "fallbackSpread": 6
+        },
+        "6": null,
+        "7": {
+          "opp": "NYJ",
+          "loc": "A",
+          "fallbackSpread": 2.5
+        },
+        "8": {
+          "opp": "NE",
+          "loc": "H",
+          "fallbackSpread": 7
+        },
+        "9": {
+          "opp": "DET",
+          "loc": "A",
+          "fallbackSpread": 6.5
+        },
+        "10": {
+          "opp": "IND",
+          "loc": "H",
+          "fallbackSpread": 7
+        },
+        "11": {
+          "opp": "BUF",
+          "loc": "A",
+          "fallbackSpread": 12
+        },
+        "12": {
+          "opp": "NYJ",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "13": {
+          "opp": "DEN",
+          "loc": "H",
+          "fallbackSpread": 9.5
+        },
+        "14": {
+          "opp": "CHI",
+          "loc": "H",
+          "fallbackSpread": 5
+        },
+        "15": {
+          "opp": "GB",
+          "loc": "H",
+          "fallbackSpread": 10.5
+        },
+        "16": {
+          "opp": "LAC",
+          "loc": "A",
+          "fallbackSpread": 7
+        },
+        "17": {
+          "opp": "BUF",
+          "loc": "H",
+          "fallbackSpread": 7.5
+        },
+        "18": {
+          "opp": "NE",
+          "loc": "H",
+          "fallbackSpread": 10.5
+        }
+      }
+    },
+    "CAR": {
+      "fullName": "Carolina Panthers",
+      "futureVal": 0.5,
+      "weeks": {
+        "1": {
+          "opp": "CHI",
+          "loc": "A",
+          "fallbackSpread": 3
+        },
+        "2": {
+          "opp": "ATL",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "3": {
+          "opp": "CLE",
+          "loc": "H",
+          "fallbackSpread": -2
+        },
+        "4": {
+          "opp": "DET",
+          "loc": "H",
+          "fallbackSpread": 3
+        },
+        "5": null,
+        "6": {
+          "opp": "PHI",
+          "loc": "A",
+          "fallbackSpread": 6.5
+        },
+        "7": {
+          "opp": "TB",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "8": {
+          "opp": "GB",
+          "loc": "H",
+          "fallbackSpread": 7
+        },
+        "9": {
+          "opp": "DEN",
+          "loc": "A",
+          "fallbackSpread": 3
+        },
+        "10": {
+          "opp": "NO",
+          "loc": "H",
+          "fallbackSpread": 1.5
+        },
+        "11": {
+          "opp": "BAL",
+          "loc": "H",
+          "fallbackSpread": 4.5
+        },
+        "12": {
+          "opp": "TB",
+          "loc": "A",
+          "fallbackSpread": 3.5
+        },
+        "13": {
+          "opp": "MIN",
+          "loc": "A",
+          "fallbackSpread": 3.5
+        },
+        "14": {
+          "opp": "NO",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "15": {
+          "opp": "CIN",
+          "loc": "H",
+          "fallbackSpread": 2.5
+        },
+        "16": {
+          "opp": "PIT",
+          "loc": "A",
+          "fallbackSpread": 3.5
+        },
+        "17": {
+          "opp": "SEA",
+          "loc": "H",
+          "fallbackSpread": 5.5
+        },
+        "18": {
+          "opp": "ATL",
+          "loc": "A",
+          "fallbackSpread": -2.5
+        }
+      }
+    },
+    "IND": {
+      "fullName": "Indianapolis Colts",
+      "futureVal": 1.0,
+      "weeks": {
+        "1": {
+          "opp": "BAL",
+          "loc": "H",
+          "fallbackSpread": 3
+        },
+        "2": {
+          "opp": "KC",
+          "loc": "A",
+          "fallbackSpread": 6.5
+        },
+        "3": {
+          "opp": "HOU",
+          "loc": "H",
+          "fallbackSpread": 1.5
+        },
+        "4": {
+          "opp": "WSH",
+          "loc": "N",
+          "fallbackSpread": 1.5
+        },
+        "5": {
+          "opp": "PIT",
+          "loc": "H",
+          "fallbackSpread": 2.5
+        },
+        "6": {
+          "opp": "TEN",
+          "loc": "A",
+          "fallbackSpread": -3.5
+        },
+        "7": {
+          "opp": "MIN",
+          "loc": "H",
+          "fallbackSpread": 2.5
+        },
+        "8": {
+          "opp": "JAX",
+          "loc": "A",
+          "fallbackSpread": 4.5
+        },
+        "9": {
+          "opp": "DAL",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "10": {
+          "opp": "MIA",
+          "loc": "H",
+          "fallbackSpread": -7
+        },
+        "11": {
+          "opp": "HOU",
+          "loc": "A",
+          "fallbackSpread": 5
+        },
+        "12": {
+          "opp": "NYG",
+          "loc": "H",
+          "fallbackSpread": -3
+        },
+        "13": null,
+        "14": {
+          "opp": "PHI",
+          "loc": "A",
+          "fallbackSpread": 5.5
+        },
+        "15": {
+          "opp": "TEN",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "16": {
+          "opp": "CIN",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "17": {
+          "opp": "CLE",
+          "loc": "A",
+          "fallbackSpread": -2.5
+        },
+        "18": {
+          "opp": "JAX",
+          "loc": "A",
+          "fallbackSpread": -1.5
+        }
+      }
+    },
+    "NYG": {
+      "fullName": "New York Giants",
+      "futureVal": 1.0,
+      "weeks": {
+        "1": {
+          "opp": "DAL",
+          "loc": "H",
+          "fallbackSpread": 3
+        },
+        "2": {
+          "opp": "LAR",
+          "loc": "A",
+          "fallbackSpread": 7
+        },
+        "3": {
+          "opp": "TEN",
+          "loc": "H",
+          "fallbackSpread": -3
+        },
+        "4": {
+          "opp": "ARI",
+          "loc": "H",
+          "fallbackSpread": -7
+        },
+        "5": {
+          "opp": "WSH",
+          "loc": "A",
+          "fallbackSpread": 2.5
+        },
+        "6": {
+          "opp": "NO",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "7": {
+          "opp": "HOU",
+          "loc": "A",
+          "fallbackSpread": 5.5
+        },
+        "8": null,
+        "9": {
+          "opp": "PHI",
+          "loc": "A",
+          "fallbackSpread": 5.5
+        },
+        "10": {
+          "opp": "WSH",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "11": {
+          "opp": "JAX",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "12": {
+          "opp": "IND",
+          "loc": "A",
+          "fallbackSpread": 3
+        },
+        "13": {
+          "opp": "SF",
+          "loc": "H",
+          "fallbackSpread": 3
+        },
+        "14": {
+          "opp": "SEA",
+          "loc": "A",
+          "fallbackSpread": 7.5
+        },
+        "15": {
+          "opp": "CLE",
+          "loc": "H",
+          "fallbackSpread": -4.5
+        },
+        "16": {
+          "opp": "DET",
+          "loc": "H",
+          "fallbackSpread": 5.5
+        },
+        "17": {
+          "opp": "DAL",
+          "loc": "H",
+          "fallbackSpread": 5
+        },
+        "18": {
+          "opp": "PHI",
+          "loc": "A",
+          "fallbackSpread": 3
+        }
+      }
+    },
+    "NE": {
+      "fullName": "New England Patriots",
+      "futureVal": 3.5,
+      "weeks": {
+        "1": {
+          "opp": "SEA",
+          "loc": "A",
+          "fallbackSpread": 3
+        },
+        "2": {
+          "opp": "PIT",
+          "loc": "H",
+          "fallbackSpread": -5.5
+        },
+        "3": {
+          "opp": "JAX",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "4": {
+          "opp": "BUF",
+          "loc": "A",
+          "fallbackSpread": 3.5
+        },
+        "5": {
+          "opp": "LV",
+          "loc": "H",
+          "fallbackSpread": -8.5
+        },
+        "6": {
+          "opp": "NYJ",
+          "loc": "H",
+          "fallbackSpread": -10
+        },
+        "7": {
+          "opp": "CHI",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "8": {
+          "opp": "MIA",
+          "loc": "H",
+          "fallbackSpread": -7
+        },
+        "9": {
+          "opp": "GB",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "10": {
+          "opp": "DET",
+          "loc": "N",
+          "fallbackSpread": 0
+        },
+        "11": null,
+        "12": {
+          "opp": "LAC",
+          "loc": "A",
+          "fallbackSpread": 2.5
+        },
+        "13": {
+          "opp": "BUF",
+          "loc": "A",
+          "fallbackSpread": -0.5
+        },
+        "14": {
+          "opp": "MIN",
+          "loc": "H",
+          "fallbackSpread": -4.5
+        },
+        "15": {
+          "opp": "KC",
+          "loc": "A",
+          "fallbackSpread": 2.5
+        },
+        "16": {
+          "opp": "NYJ",
+          "loc": "A",
+          "fallbackSpread": -6.5
+        },
+        "17": {
+          "opp": "DEN",
+          "loc": "H",
+          "fallbackSpread": -3
+        },
+        "18": {
+          "opp": "MIA",
+          "loc": "H",
+          "fallbackSpread": -10.5
+        }
+      }
+    },
+    "SF": {
+      "fullName": "San Francisco 49ers",
+      "futureVal": 5.0,
+      "weeks": {
+        "1": {
+          "opp": "LAR",
+          "loc": "N",
+          "fallbackSpread": 3.5
+        },
+        "2": {
+          "opp": "MIA",
+          "loc": "H",
+          "fallbackSpread": -13.5
+        },
+        "3": {
+          "opp": "ARI",
+          "loc": "H",
+          "fallbackSpread": -11.5
+        },
+        "4": {
+          "opp": "DEN",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "5": {
+          "opp": "SEA",
+          "loc": "A",
+          "fallbackSpread": 3.5
+        },
+        "6": {
+          "opp": "WSH",
+          "loc": "H",
+          "fallbackSpread": -5.5
+        },
+        "7": {
+          "opp": "ATL",
+          "loc": "A",
+          "fallbackSpread": -4.5
+        },
+        "8": null,
+        "9": {
+          "opp": "LV",
+          "loc": "H",
+          "fallbackSpread": -9
+        },
+        "10": {
+          "opp": "DAL",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "11": {
+          "opp": "MIN",
+          "loc": "N",
+          "fallbackSpread": -3.5
+        },
+        "12": {
+          "opp": "SEA",
+          "loc": "A",
+          "fallbackSpread": -1.5
+        },
+        "13": {
+          "opp": "NYG",
+          "loc": "A",
+          "fallbackSpread": -3
+        },
+        "14": {
+          "opp": "LAR",
+          "loc": "H",
+          "fallbackSpread": 2
+        },
+        "15": {
+          "opp": "LAC",
+          "loc": "H",
+          "fallbackSpread": 2.5
+        },
+        "16": {
+          "opp": "KC",
+          "loc": "A",
+          "fallbackSpread": 3
+        },
+        "17": {
+          "opp": "PHI",
+          "loc": "A",
+          "fallbackSpread": -1.5
+        },
+        "18": {
+          "opp": "ARI",
+          "loc": "H",
+          "fallbackSpread": -8.5
+        }
+      }
+    },
+    "TB": {
+      "fullName": "Tampa Bay Buccaneers",
+      "futureVal": 1.5,
+      "weeks": {
+        "1": {
+          "opp": "CIN",
+          "loc": "A",
+          "fallbackSpread": 3.5
+        },
+        "2": {
+          "opp": "CLE",
+          "loc": "H",
+          "fallbackSpread": -8.5
+        },
+        "3": {
+          "opp": "MIN",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "4": {
+          "opp": "GB",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "5": {
+          "opp": "DAL",
+          "loc": "H",
+          "fallbackSpread": 3.5
+        },
+        "6": {
+          "opp": "PIT",
+          "loc": "A",
+          "fallbackSpread": -1.5
+        },
+        "7": {
+          "opp": "CAR",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "8": {
+          "opp": "ATL",
+          "loc": "A",
+          "fallbackSpread": -4.5
+        },
+        "9": {
+          "opp": "CHI",
+          "loc": "A",
+          "fallbackSpread": 3.5
+        },
+        "10": null,
+        "11": {
+          "opp": "DET",
+          "loc": "H",
+          "fallbackSpread": 4.5
+        },
+        "12": {
+          "opp": "CAR",
+          "loc": "H",
+          "fallbackSpread": -3.5
+        },
+        "13": {
+          "opp": "LAC",
+          "loc": "H",
+          "fallbackSpread": 1.5
+        },
+        "14": {
+          "opp": "BAL",
+          "loc": "A",
+          "fallbackSpread": 6
+        },
+        "15": {
+          "opp": "NO",
+          "loc": "A",
+          "fallbackSpread": -3.5
+        },
+        "16": {
+          "opp": "ATL",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "17": {
+          "opp": "LAR",
+          "loc": "A",
+          "fallbackSpread": 4
+        },
+        "18": {
+          "opp": "NO",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        }
+      }
+    },
+    "WSH": {
+      "fullName": "Washington Commanders",
+      "futureVal": 0.5,
+      "weeks": {
+        "1": {
+          "opp": "PHI",
+          "loc": "A",
+          "fallbackSpread": 6
+        },
+        "2": {
+          "opp": "DAL",
+          "loc": "A",
+          "fallbackSpread": 3.5
+        },
+        "3": {
+          "opp": "SEA",
+          "loc": "H",
+          "fallbackSpread": 3.5
+        },
+        "4": {
+          "opp": "IND",
+          "loc": "N",
+          "fallbackSpread": -1.5
+        },
+        "5": {
+          "opp": "NYG",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "6": {
+          "opp": "SF",
+          "loc": "A",
+          "fallbackSpread": 5.5
+        },
+        "7": null,
+        "8": {
+          "opp": "PHI",
+          "loc": "H",
+          "fallbackSpread": 2.5
+        },
+        "9": {
+          "opp": "LAR",
+          "loc": "H",
+          "fallbackSpread": 5
+        },
+        "10": {
+          "opp": "NYG",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "11": {
+          "opp": "CIN",
+          "loc": "H",
+          "fallbackSpread": 1.5
+        },
+        "12": {
+          "opp": "ARI",
+          "loc": "A",
+          "fallbackSpread": -4.5
+        },
+        "13": {
+          "opp": "TEN",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "14": {
+          "opp": "HOU",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "15": {
+          "opp": "ATL",
+          "loc": "A",
+          "fallbackSpread": -4
+        },
+        "16": {
+          "opp": "MIN",
+          "loc": "H",
+          "fallbackSpread": 2.5
+        },
+        "17": {
+          "opp": "JAX",
+          "loc": "A",
+          "fallbackSpread": 3.5
+        },
+        "18": {
+          "opp": "DAL",
+          "loc": "H",
+          "fallbackSpread": 1.5
+        }
+      }
+    },
+    "ATL": {
+      "fullName": "Atlanta Falcons",
+      "futureVal": 0.0,
+      "weeks": {
+        "1": {
+          "opp": "PIT",
+          "loc": "A",
+          "fallbackSpread": 6.5
+        },
+        "2": {
+          "opp": "CAR",
+          "loc": "H",
+          "fallbackSpread": 1.5
+        },
+        "3": {
+          "opp": "GB",
+          "loc": "A",
+          "fallbackSpread": 7.5
+        },
+        "4": {
+          "opp": "NO",
+          "loc": "A",
+          "fallbackSpread": 2.5
+        },
+        "5": {
+          "opp": "BAL",
+          "loc": "H",
+          "fallbackSpread": 4.5
+        },
+        "6": {
+          "opp": "CHI",
+          "loc": "H",
+          "fallbackSpread": 3
+        },
+        "7": {
+          "opp": "SF",
+          "loc": "H",
+          "fallbackSpread": 4.5
+        },
+        "8": {
+          "opp": "TB",
+          "loc": "A",
+          "fallbackSpread": 4.5
+        },
+        "9": {
+          "opp": "CIN",
+          "loc": "N",
+          "fallbackSpread": 4.5
+        },
+        "10": {
+          "opp": "KC",
+          "loc": "H",
+          "fallbackSpread": 4
+        },
+        "11": null,
+        "12": {
+          "opp": "MIN",
+          "loc": "A",
+          "fallbackSpread": 4
+        },
+        "13": {
+          "opp": "DET",
+          "loc": "H",
+          "fallbackSpread": 3.5
+        },
+        "14": {
+          "opp": "CLE",
+          "loc": "A",
+          "fallbackSpread": 0
+        },
+        "15": {
+          "opp": "WSH",
+          "loc": "H",
+          "fallbackSpread": 4
+        },
+        "16": {
+          "opp": "TB",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        },
+        "17": {
+          "opp": "NO",
+          "loc": "H",
+          "fallbackSpread": -2
+        },
+        "18": {
+          "opp": "CAR",
+          "loc": "A",
+          "fallbackSpread": 2.5
+        }
+      }
+    },
+    "NO": {
+      "fullName": "New Orleans Saints",
+      "futureVal": 1.0,
+      "weeks": {
+        "1": {
+          "opp": "DET",
+          "loc": "A",
+          "fallbackSpread": 7
+        },
+        "2": {
+          "opp": "BAL",
+          "loc": "A",
+          "fallbackSpread": 8.5
+        },
+        "3": {
+          "opp": "LV",
+          "loc": "H",
+          "fallbackSpread": -4
+        },
+        "4": {
+          "opp": "ATL",
+          "loc": "H",
+          "fallbackSpread": -2.5
+        },
+        "5": {
+          "opp": "MIN",
+          "loc": "H",
+          "fallbackSpread": 1.5
+        },
+        "6": {
+          "opp": "NYG",
+          "loc": "A",
+          "fallbackSpread": 2.5
+        },
+        "7": {
+          "opp": "PIT",
+          "loc": "N",
+          "fallbackSpread": 2
+        },
+        "8": null,
+        "9": {
+          "opp": "CLE",
+          "loc": "H",
+          "fallbackSpread": -4
+        },
+        "10": {
+          "opp": "CAR",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "11": {
+          "opp": "CHI",
+          "loc": "H",
+          "fallbackSpread": 6.5
+        },
+        "12": {
+          "opp": "CIN",
+          "loc": "A",
+          "fallbackSpread": 6.5
+        },
+        "13": {
+          "opp": "GB",
+          "loc": "H",
+          "fallbackSpread": 4.5
+        },
+        "14": {
+          "opp": "CAR",
+          "loc": "A",
+          "fallbackSpread": 2.5
+        },
+        "15": {
+          "opp": "TB",
+          "loc": "H",
+          "fallbackSpread": 3.5
+        },
+        "16": {
+          "opp": "ARI",
+          "loc": "H",
+          "fallbackSpread": -5.5
+        },
+        "17": {
+          "opp": "ATL",
+          "loc": "A",
+          "fallbackSpread": 2
+        },
+        "18": {
+          "opp": "TB",
+          "loc": "A",
+          "fallbackSpread": 1.5
+        }
+      }
+    },
+    "CLE": {
+      "fullName": "Cleveland Browns",
+      "futureVal": 0.0,
+      "weeks": {
+        "1": {
+          "opp": "JAX",
+          "loc": "H",
+          "fallbackSpread": 8.5
+        },
+        "2": {
+          "opp": "TB",
+          "loc": "H",
+          "fallbackSpread": 8.5
+        },
+        "3": {
+          "opp": "CAR",
+          "loc": "A",
+          "fallbackSpread": 2
+        },
+        "4": {
+          "opp": "PIT",
+          "loc": "A",
+          "fallbackSpread": 3
+        },
+        "5": {
+          "opp": "NYJ",
+          "loc": "A",
+          "fallbackSpread": 2
+        },
+        "6": {
+          "opp": "BAL",
+          "loc": "H",
+          "fallbackSpread": 7
+        },
+        "7": {
+          "opp": "TEN",
+          "loc": "A",
+          "fallbackSpread": 3
+        },
+        "8": {
+          "opp": "PIT",
+          "loc": "H",
+          "fallbackSpread": 6
+        },
+        "9": {
+          "opp": "NO",
+          "loc": "H",
+          "fallbackSpread": 4
+        },
+        "10": {
+          "opp": "HOU",
+          "loc": "A",
+          "fallbackSpread": 4.5
+        },
+        "11": null,
+        "12": {
+          "opp": "LV",
+          "loc": "A",
+          "fallbackSpread": -2
+        },
+        "13": {
+          "opp": "CIN",
+          "loc": "H",
+          "fallbackSpread": 4.5
+        },
+        "14": {
+          "opp": "ATL",
+          "loc": "A",
+          "fallbackSpread": 0
+        },
+        "15": {
+          "opp": "NYG",
+          "loc": "A",
+          "fallbackSpread": 4.5
+        },
+        "16": {
+          "opp": "BAL",
+          "loc": "A",
+          "fallbackSpread": 10
+        },
+        "17": {
+          "opp": "IND",
+          "loc": "H",
+          "fallbackSpread": 2.5
+        },
+        "18": {
+          "opp": "CIN",
+          "loc": "H",
+          "fallbackSpread": 7.5
+        }
+      }
+    },
+    "ARI": {
+      "fullName": "Arizona Cardinals",
+      "futureVal": 0.0,
+      "weeks": {
+        "1": {
+          "opp": "LAC",
+          "loc": "A",
+          "fallbackSpread": 9.5
+        },
+        "2": {
+          "opp": "SEA",
+          "loc": "H",
+          "fallbackSpread": 4.5
+        },
+        "3": {
+          "opp": "SF",
+          "loc": "A",
+          "fallbackSpread": 11.5
+        },
+        "4": {
+          "opp": "NYG",
+          "loc": "A",
+          "fallbackSpread": 7
+        },
+        "5": {
+          "opp": "DET",
+          "loc": "H",
+          "fallbackSpread": 8.5
+        },
+        "6": {
+          "opp": "LAR",
+          "loc": "A",
+          "fallbackSpread": 14
+        },
+        "7": {
+          "opp": "DEN",
+          "loc": "H",
+          "fallbackSpread": 7.5
+        },
+        "8": {
+          "opp": "DAL",
+          "loc": "A",
+          "fallbackSpread": 10.5
+        },
+        "9": {
+          "opp": "SEA",
+          "loc": "A",
+          "fallbackSpread": 13.5
+        },
+        "10": {
+          "opp": "LAR",
+          "loc": "H",
+          "fallbackSpread": 10.5
+        },
+        "11": {
+          "opp": "KC",
+          "loc": "A",
+          "fallbackSpread": 11.5
+        },
+        "12": {
+          "opp": "WSH",
+          "loc": "H",
+          "fallbackSpread": 4.5
+        },
+        "13": {
+          "opp": "PHI",
+          "loc": "A",
+          "fallbackSpread": 8.5
+        },
+        "14": null,
+        "15": {
+          "opp": "NYJ",
+          "loc": "H",
+          "fallbackSpread": -1.5
+        },
+        "16": {
+          "opp": "NO",
+          "loc": "A",
+          "fallbackSpread": 5.5
+        },
+        "17": {
+          "opp": "LV",
+          "loc": "H",
+          "fallbackSpread": 1.5
+        },
+        "18": {
+          "opp": "SF",
+          "loc": "A",
+          "fallbackSpread": 8.5
+        }
+      }
+    }
+  }
+}

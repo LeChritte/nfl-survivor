@@ -108,9 +108,11 @@ export async function fetchAndMatchOdds(): Promise<OddsCache | null> {
         }
       }
 
-      const avgSpreadHome = spreadPoints.length
+      const rawAvg = spreadPoints.length
         ? spreadPoints.reduce((a, b) => a + b, 0) / spreadPoints.length
         : null;
+      // Round to nearest 0.5 — NFL spreads are always in 0.5 increments
+      const avgSpreadHome = rawAvg !== null ? Math.round(rawAvg * 2) / 2 : null;
 
       const avgHomeImplied = homeImplieds.length
         ? homeImplieds.reduce((a, b) => a + b, 0) / homeImplieds.length

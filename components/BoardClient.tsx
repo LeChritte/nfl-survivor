@@ -52,11 +52,18 @@ export default function BoardClient({ seedData: _seedData }: BoardClientProps) {
   useEffect(() => {
     try {
       const raw = localStorage.getItem(LS_KEY);
+      let p: Picks = {};
+      let o: Overrides = {};
       if (raw) {
         const saved = JSON.parse(raw);
-        if (saved?.picks) setPicks(saved.picks);
-        if (saved?.overrides) setOverrides(saved.overrides);
+        if (saved?.picks) p = saved.picks;
+        if (saved?.overrides) o = saved.overrides;
       }
+      // PIT was used in Week 1 — lock it in so it can't be reused
+      if (!p['1']?.includes('PIT')) p = { ...p, '1': ['PIT'] };
+      setPicks(p);
+      setOverrides(o);
+      persist(p, o);
     } catch { /* ignore */ }
     fetch('/api/odds')
       .then(r => (r.ok ? r.json() : null))

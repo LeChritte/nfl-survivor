@@ -295,7 +295,7 @@ export default function BoardClient({ seedData: _seedData }: BoardClientProps) {
 
       {/* Reference plan */}
       <details className="suggest">
-        <summary>📋 Reference plan (computed from today&apos;s lines — a starting point, not gospel)</summary>
+        <summary>📋 Reference plan (computed from today&apos;s lines — a starting point)</summary>
         <p className="note" style={{ marginTop: 8 }}>
           This is one mathematically strong allocation given <b>today&apos;s</b> spreads, built to save your best teams for the crowded double-pick stretch (weeks 12&ndash;16).
           Odds will move a lot between now and December — re-check before each week. Click &ldquo;Use&rdquo; on any week to auto-fill it, only if those teams are still unused.

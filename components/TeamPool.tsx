@@ -13,7 +13,7 @@ export default function TeamPool({ teams, usedMap, selectedTeam, onSelect }: Tea
 
   return (
     <div className="panel pool">
-      <h2>All 32 Teams</h2>
+      <h2>All 32 Teams — tap a team, then tap a week slot</h2>
       <div className="teamgrid">
         {sorted.map(team => (
           <TeamChip

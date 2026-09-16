@@ -88,7 +88,7 @@ export default function WeekCard({
             }}
             style={{ cursor: 'pointer' }}
           >
-            Drop team here{selectedTeam ? ` (tap to use ${selectedTeam})` : ''}
+            {selectedTeam ? `Tap → ${selectedTeam}` : 'Pick a team'}
           </div>
         );
       })}

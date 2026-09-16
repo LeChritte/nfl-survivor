@@ -1,7 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState, useCallback } from 'react';
-import { useRouter } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
 import type { SeedData } from '@/lib/schedule';
 import { getTeams, getWeekEntry, getDoubleWeeks, getByeTeams } from '@/lib/schedule';
 import { spreadToWinPct } from '@/lib/winProb';
@@ -13,7 +12,6 @@ import Toast from './Toast';
 
 interface BoardClientProps {
   seedData: SeedData;
-  oddsCache: OddsCache | null;
 }
 
 export type CellInfo = { opp: string; spread: number; loc: string; isLive: boolean };
@@ -38,20 +36,11 @@ function starString(fv: number): string {
   return s || '–';
 }
 
-export default function BoardClient({ seedData: _seedData, oddsCache }: BoardClientProps) {
-  const router = useRouter();
+export default function BoardClient({ seedData: _seedData }: BoardClientProps) {
   const teams = getTeams();
   const doubleWeeks = getDoubleWeeks();
 
-  // Build lookup: "TEAMCODE_week" → LiveOddsEntry
-  const liveOddsMap = new Map<string, { spread: number; winPct: number }>();
-  if (oddsCache) {
-    for (const e of oddsCache.entries) {
-      liveOddsMap.set(`${e.teamCode}_${e.week}`, { spread: e.spread, winPct: e.winPct });
-    }
-  }
-
-  const [playerName, setPlayerName] = useState('');
+  const [oddsCache, setOddsCache] = useState<OddsCache | null>(null);
   const [picks, setPicks] = useState<Picks>({});
   const [overrides, setOverrides] = useState<Overrides>({});
   const [selectedTeam, setSelectedTeam] = useState<string | null>(null);
@@ -59,9 +48,6 @@ export default function BoardClient({ seedData: _seedData, oddsCache }: BoardCli
   const toastTimerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   useEffect(() => {
-    const name = localStorage.getItem('survivor_player_name');
-    if (!name) { router.replace('/'); return; }
-    setPlayerName(name);
     try {
       const raw = localStorage.getItem(LS_KEY);
       if (raw) {
@@ -70,7 +56,19 @@ export default function BoardClient({ seedData: _seedData, oddsCache }: BoardCli
         if (saved?.overrides) setOverrides(saved.overrides);
       }
     } catch { /* ignore */ }
-  }, [router]);
+    fetch('/api/odds')
+      .then(r => (r.ok ? r.json() : null))
+      .then(data => { if (data && !data.error) setOddsCache(data); })
+      .catch(() => {});
+  }, []);
+
+  // Build lookup: "TEAMCODE_week" → LiveOddsEntry
+  const liveOddsMap = new Map<string, { spread: number; winPct: number }>();
+  if (oddsCache) {
+    for (const e of oddsCache.entries) {
+      liveOddsMap.set(`${e.teamCode}_${e.week}`, { spread: e.spread, winPct: e.winPct });
+    }
+  }
 
   function persist(p: Picks, o: Overrides) {
     try {
@@ -222,8 +220,6 @@ export default function BoardClient({ seedData: _seedData, oddsCache }: BoardCli
   }
   const cushion = remaining - picksNeeded;
   const cushionClass = cushion <= 2 ? 'stat warn' : cushion > 5 ? 'stat good' : 'stat';
-
-  if (!playerName) return null;
 
   return (
     <div className="wrap">

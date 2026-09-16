@@ -5,6 +5,7 @@ import type { SeedData } from '@/lib/schedule';
 import { getTeams, getWeekEntry, getDoubleWeeks, getByeTeams } from '@/lib/schedule';
 import { spreadToWinPct } from '@/lib/winProb';
 import type { OddsCache } from '@/lib/oddsApi';
+import type { SurvivorGridCache } from '@/app/api/survivor-grid/route';
 import TeamPool from './TeamPool';
 import WeekBoard from './WeekBoard';
 import ScheduleGrid from './ScheduleGrid';
@@ -14,7 +15,7 @@ interface BoardClientProps {
   seedData: SeedData;
 }
 
-export type CellInfo = { opp: string; spread: number; loc: string; isLive: boolean };
+export type CellInfo = { opp: string; spread: number; loc: string; source: 'live' | 'projected' | 'fallback' };
 export type Picks = Record<string, string[]>;
 export type Overrides = Record<string, { opp: string; spread: number; loc: string }>;
 
@@ -41,6 +42,7 @@ export default function BoardClient({ seedData: _seedData }: BoardClientProps) {
   const doubleWeeks = getDoubleWeeks();
 
   const [oddsCache, setOddsCache] = useState<OddsCache | null>(null);
+  const [sgCache, setSgCache] = useState<SurvivorGridCache | null>(null);
   const [picks, setPicks] = useState<Picks>({});
   const [overrides, setOverrides] = useState<Overrides>({});
   const [selectedTeam, setSelectedTeam] = useState<string | null>(null);
@@ -60,13 +62,25 @@ export default function BoardClient({ seedData: _seedData }: BoardClientProps) {
       .then(r => (r.ok ? r.json() : null))
       .then(data => { if (data && !data.error) setOddsCache(data); })
       .catch(() => {});
+    fetch('/api/survivor-grid')
+      .then(r => (r.ok ? r.json() : null))
+      .then(data => { if (data && !data.error) setSgCache(data); })
+      .catch(() => {});
   }, []);
 
-  // Build lookup: "TEAMCODE_week" → LiveOddsEntry
+  // Build lookup maps: "TEAMCODE_week" → spread/winPct
   const liveOddsMap = new Map<string, { spread: number; winPct: number }>();
   if (oddsCache) {
     for (const e of oddsCache.entries) {
       liveOddsMap.set(`${e.teamCode}_${e.week}`, { spread: e.spread, winPct: e.winPct });
+    }
+  }
+  const sgOddsMap = new Map<string, { spread: number; winPct: number }>();
+  if (sgCache) {
+    for (const e of sgCache.entries) {
+      if (e.spread !== null && e.winPct !== null) {
+        sgOddsMap.set(`${e.teamCode}_${e.week}`, { spread: e.spread, winPct: e.winPct });
+      }
     }
   }
 
@@ -84,12 +98,14 @@ export default function BoardClient({ seedData: _seedData }: BoardClientProps) {
 
   function getCell(team: string, week: number): CellInfo | null {
     const key = `${team}_${week}`;
-    if (overrides[key]) return { ...overrides[key], isLive: false };
+    if (overrides[key]) return { ...overrides[key], source: 'projected' };
     const entry = getWeekEntry(team, week);
     if (!entry) return null;
     const live = liveOddsMap.get(key);
-    if (live) return { opp: entry.opp, spread: live.spread, loc: entry.loc, isLive: true };
-    return { opp: entry.opp, spread: entry.fallbackSpread, loc: entry.loc, isLive: false };
+    if (live) return { opp: entry.opp, spread: live.spread, loc: entry.loc, source: 'live' };
+    const proj = sgOddsMap.get(key);
+    if (proj) return { opp: entry.opp, spread: proj.spread, loc: entry.loc, source: 'projected' };
+    return { opp: entry.opp, spread: entry.fallbackSpread, loc: entry.loc, source: 'fallback' };
   }
 
   function usedTeamsMap(): Record<string, number> {
@@ -229,9 +245,10 @@ export default function BoardClient({ seedData: _seedData }: BoardClientProps) {
         &nbsp;Drag teams onto a week (or tap a team, then tap a slot). One team per contest, ever. Weeks 9, 12&ndash;16 need <b>two</b> correct picks.
         &nbsp;·&nbsp;
         {oddsCache
-          ? <>📡 Live odds as of {new Date(oddsCache.fetchedAt).toLocaleString('en-US', { weekday: 'short', hour: 'numeric', minute: '2-digit' })}. Win% marked <b>~</b> are preseason estimates.</>
-          : <>📊 Odds: preseason estimates only (~ prefix). Live odds unavailable.</>
+          ? <>📡 Live odds as of {new Date(oddsCache.fetchedAt).toLocaleString('en-US', { weekday: 'short', hour: 'numeric', minute: '2-digit' })}.</>
+          : <>📡 Live odds unavailable.</>
         }
+        {sgCache && <> &nbsp;·&nbsp; 📊 ~% estimates from <a href="https://www.survivorgrid.com" target="_blank" rel="noopener" style={{ color: 'var(--accent)' }}>SurvivorGrid</a> projected spreads (updated hourly).</>}
       </p>
 
       <div className="topbar">

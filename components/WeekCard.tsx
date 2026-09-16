@@ -59,9 +59,11 @@ export default function WeekCard({
                       >✎</span>
                     </div>
                   )}
-                  {cell?.isLive
+                  {cell?.source === 'live'
                     ? <span className={`winchip ${winCls}`}>{Math.round(wp * 100)}% win</span>
-                    : <span className="winchip" style={{ background: 'var(--panel-2)', color: 'var(--text-dim)' }}>~{Math.round(wp * 100)}% est</span>
+                    : cell?.source === 'projected'
+                    ? <span className="winchip" style={{ background: 'var(--panel-2)', color: 'var(--text-dim)' }}>~{Math.round(wp * 100)}% est</span>
+                    : <span className="winchip" style={{ background: 'var(--panel-2)', color: 'var(--text-dim)' }}>N/A</span>
                   }
                 </div>
                 <button className="rm" title="Remove pick" onClick={() => onUnassign(team)}>✕</button>

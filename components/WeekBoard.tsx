@@ -1,10 +1,11 @@
 import type { TeamSchedule } from '@/lib/schedule';
 import { getByeTeams } from '@/lib/schedule';
-import type { CellInfo, Picks } from './BoardClient';
+import type { CellInfo, Picks, Results } from './BoardClient';
 import WeekCard from './WeekCard';
 
 interface WeekBoardProps {
   picks: Picks;
+  results: Results;
   selectedTeam: string | null;
   doubleWeeks: number[];
   teams: TeamSchedule[];
@@ -17,7 +18,7 @@ interface WeekBoardProps {
 }
 
 export default function WeekBoard({
-  picks, selectedTeam, doubleWeeks, teams, getCell,
+  picks, results, selectedTeam, doubleWeeks, teams, getCell,
   onSlotTap, onUnassign, onDropTeam, onEditCell, onShowToast,
 }: WeekBoardProps) {
   const weeks = Array.from({ length: 18 }, (_, i) => i + 1);
@@ -32,6 +33,7 @@ export default function WeekBoard({
             week={week}
             isDouble={doubleWeeks.includes(week)}
             weekPicks={picks[String(week)] || []}
+            results={results}
             selectedTeam={selectedTeam}
             teams={teams}
             byeTeams={getByeTeams(week)}

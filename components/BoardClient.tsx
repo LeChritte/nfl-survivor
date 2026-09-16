@@ -18,6 +18,7 @@ interface BoardClientProps {
 export type CellInfo = { opp: string; spread: number; loc: string; source: 'live' | 'projected' | 'fallback' };
 export type Picks = Record<string, string[]>;
 export type Overrides = Record<string, { opp: string; spread: number; loc: string }>;
+export type Results = Record<string, 'W' | 'L'>; // key: "TEAM_week"
 
 const DOUBLE_WEEKS = new Set([9, 12, 13, 14, 15, 16]);
 const LS_KEY = 'survivor_pool_planner_state_v1';
@@ -45,6 +46,7 @@ export default function BoardClient({ seedData: _seedData }: BoardClientProps) {
   const [sgCache, setSgCache] = useState<SurvivorGridCache | null>(null);
   const [picks, setPicks] = useState<Picks>({});
   const [overrides, setOverrides] = useState<Overrides>({});
+  const [results, setResults] = useState<Results>({ 'PIT_1': 'W' });
   const [selectedTeam, setSelectedTeam] = useState<string | null>(null);
   const [toast, setToast] = useState<string | null>(null);
   const toastTimerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
@@ -58,6 +60,7 @@ export default function BoardClient({ seedData: _seedData }: BoardClientProps) {
         const saved = JSON.parse(raw);
         if (saved?.picks) p = saved.picks;
         if (saved?.overrides) o = saved.overrides;
+        if (saved?.results) setResults(r => ({ ...saved.results, ...r })); // merge, keeping seeded wins
       }
       // PIT was used in Week 1 — lock it in so it can't be reused
       if (!p['1']?.includes('PIT')) p = { ...p, '1': ['PIT'] };
@@ -91,9 +94,9 @@ export default function BoardClient({ seedData: _seedData }: BoardClientProps) {
     }
   }
 
-  function persist(p: Picks, o: Overrides) {
+  function persist(p: Picks, o: Overrides, r: Results = results) {
     try {
-      localStorage.setItem(LS_KEY, JSON.stringify({ picks: p, overrides: o, updatedAt: Date.now() }));
+      localStorage.setItem(LS_KEY, JSON.stringify({ picks: p, overrides: o, results: r, updatedAt: Date.now() }));
     } catch { showToast("Couldn't save — storage may be blocked."); }
   }
 
@@ -328,6 +331,7 @@ export default function BoardClient({ seedData: _seedData }: BoardClientProps) {
         />
         <WeekBoard
           picks={picks}
+          results={results}
           selectedTeam={selectedTeam}
           doubleWeeks={doubleWeeks}
           teams={teams}

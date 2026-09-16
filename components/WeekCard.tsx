@@ -3,12 +3,13 @@
 import { useState } from 'react';
 import type { TeamSchedule } from '@/lib/schedule';
 import { spreadToWinPct } from '@/lib/winProb';
-import type { CellInfo } from './BoardClient';
+import type { CellInfo, Results } from './BoardClient';
 
 interface WeekCardProps {
   week: number;
   isDouble: boolean;
   weekPicks: string[];
+  results: Results;
   selectedTeam: string | null;
   teams: TeamSchedule[];
   byeTeams: string[];
@@ -21,15 +22,22 @@ interface WeekCardProps {
 }
 
 export default function WeekCard({
-  week, isDouble, weekPicks, selectedTeam, teams, byeTeams,
+  week, isDouble, weekPicks, results, selectedTeam, teams, byeTeams,
   getCell, onSlotTap, onUnassign, onDropTeam, onEditCell, onShowToast,
 }: WeekCardProps) {
   const [dragOverSlot, setDragOverSlot] = useState<number | null>(null);
   const need = isDouble ? 2 : 1;
   const slots = Array.from({ length: need }, (_, i) => i);
 
+  // Determine week-level result for border/background
+  const filledPicks = weekPicks.filter(Boolean);
+  const weekDone = filledPicks.length === need;
+  const allWon = weekDone && filledPicks.every(t => results[`${t}_${week}`] === 'W');
+  const anyLost = filledPicks.some(t => results[`${t}_${week}`] === 'L');
+  const weekCls = allWon ? ' won' : anyLost ? ' lost' : '';
+
   return (
-    <div className="week">
+    <div className={`week${weekCls}`}>
       <div className="wkhead">
         <span className="wknum">Week {week}</span>
         {isDouble && <span className="badge-dbl">2 PICKS</span>}
@@ -59,7 +67,11 @@ export default function WeekCard({
                       >✎</span>
                     </div>
                   )}
-                  {cell?.source === 'live'
+                  {results[`${team}_${week}`] === 'W'
+                    ? <span className="winchip win-g">✓ 100% — Won</span>
+                    : results[`${team}_${week}`] === 'L'
+                    ? <span className="winchip win-r">✗ Lost</span>
+                    : cell?.source === 'live'
                     ? <span className={`winchip ${winCls}`}>{Math.round(wp * 100)}% win</span>
                     : cell?.source === 'projected'
                     ? <span className="winchip" style={{ background: 'var(--panel-2)', color: 'var(--text-dim)' }}>~{Math.round(wp * 100)}% est</span>

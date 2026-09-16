@@ -9,6 +9,7 @@ import type { SurvivorGridCache } from '@/app/api/survivor-grid/route';
 import TeamPool from './TeamPool';
 import WeekBoard from './WeekBoard';
 import ScheduleGrid from './ScheduleGrid';
+import Planner from './Planner';
 import Toast from './Toast';
 
 interface BoardClientProps {
@@ -23,13 +24,6 @@ export type Results = Record<string, 'W' | 'L'>; // key: "TEAM_week"
 const DOUBLE_WEEKS = new Set([9, 12, 13, 14, 15, 16]);
 const LS_KEY = 'survivor_pool_planner_state_v1';
 
-const SUGGESTED: Record<string, string[]> = {
-  '2': ['TB'], '3': ['SF'], '4': ['MIN'], '5': ['CIN'], '6': ['LAR'],
-  '7': ['HOU'], '8': ['DAL'], '9': ['KC', 'SEA'], '10': ['IND'],
-  '11': ['LAC'], '12': ['JAX', 'WSH'], '13': ['DEN', 'PHI'],
-  '14': ['CHI', 'DET'], '15': ['GB', 'NYG'], '16': ['BAL', 'NO'],
-  '17': ['BUF'], '18': ['NE'],
-};
 
 function starString(fv: number): string {
   const full = Math.floor(fv);
@@ -293,38 +287,18 @@ export default function BoardClient({ seedData: _seedData }: BoardClientProps) {
         </div>
       </div>
 
-      {/* Reference plan */}
+      {/* Plan generator */}
       <details className="suggest">
-        <summary>📋 Reference plan (computed from today&apos;s lines — a starting point)</summary>
-        <p className="note" style={{ marginTop: 8 }}>
-          This is one mathematically strong allocation given <b>today&apos;s</b> spreads, built to save your best teams for the crowded double-pick stretch (weeks 12&ndash;16).
-          Odds will move a lot between now and December — re-check before each week. Click &ldquo;Use&rdquo; on any week to auto-fill it, only if those teams are still unused.
-        </p>
-        <div className="suggestgrid">
-          {Object.keys(SUGGESTED).map(Number).sort((a, b) => a - b).map(w => {
-            const sugTeams = SUGGESTED[String(w)];
-            const allAvail = sugTeams.every(t => usedMap[t] === undefined);
-            return (
-              <div key={w} className="sg-item">
-                <b>Week {w}{DOUBLE_WEEKS.has(w) ? ' (2)' : ''}</b><br />
-                {sugTeams.join(' + ')}
-                {allAvail ? (
-                  <div>
-                    <button className="small fillbtn" onClick={() => {
-                      const clash = sugTeams.find(t => usedMap[t] !== undefined);
-                      if (clash) { showToast(`${clash} is already used — can't apply.`); return; }
-                      const newPicks = { ...picks, [String(w)]: [...sugTeams] };
-                      setPicks(newPicks);
-                      persist(newPicks, overrides);
-                    }}>Use</button>
-                  </div>
-                ) : (
-                  <div style={{ color: 'var(--text-dim)' }}>already committed differently</div>
-                )}
-              </div>
-            );
-          })}
-        </div>
+        <summary>🤖 Plan generator — lock picks, avoid teams, fill the rest</summary>
+        <Planner
+          teams={teams}
+          currentPicks={picks}
+          getCell={getCell}
+          onApply={(newPicks) => {
+            setPicks(newPicks);
+            persist(newPicks, overrides);
+          }}
+        />
       </details>
 
       {/* Schedule grid */}

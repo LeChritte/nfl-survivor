@@ -46,7 +46,25 @@ export default function BoardClient({ seedData: _seedData }: BoardClientProps) {
   const [sgCache, setSgCache] = useState<SurvivorGridCache | null>(null);
   const [picks, setPicks] = useState<Picks>({});
   const [overrides, setOverrides] = useState<Overrides>({});
-  const [results, setResults] = useState<Results>({ 'PIT_1': 'W' });
+  const [results, setResults] = useState<Results>({
+    // Week 1 final results (Sep 9–14, 2026)
+    'SEA_1': 'W', 'NE_1':  'L',
+    'SF_1':  'W', 'LAR_1': 'L',
+    'CIN_1': 'W', 'TB_1':  'L',
+    'DET_1': 'W', 'NO_1':  'L',
+    'NYJ_1': 'W', 'TEN_1': 'L',
+    'BAL_1': 'W', 'IND_1': 'L',
+    'PIT_1': 'W', 'ATL_1': 'L',
+    'CHI_1': 'W', 'CAR_1': 'L',
+    'JAX_1': 'W', 'CLE_1': 'L',
+    'BUF_1': 'W', 'HOU_1': 'L',
+    'LV_1':  'W', 'MIA_1': 'L',
+    'MIN_1': 'W', 'GB_1':  'L',
+    'PHI_1': 'W', 'WSH_1': 'L',
+    'ARI_1': 'W', 'LAC_1': 'L',
+    'NYG_1': 'W', 'DAL_1': 'L',
+    'KC_1':  'W', 'DEN_1': 'L',
+  });
   const [selectedTeam, setSelectedTeam] = useState<string | null>(null);
   const [toast, setToast] = useState<string | null>(null);
   const toastTimerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);

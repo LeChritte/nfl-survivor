@@ -10,6 +10,8 @@ interface ScheduleGridProps {
   picks: Picks;
   getCell: (team: string, week: number) => CellInfo | null;
   doubleWeeks: number[];
+  onPick: (team: string, week: number) => void;
+  onUnpick: (team: string, week: number) => void;
 }
 
 type GridSort = { week: number | null; dir: 'asc' | 'desc' };
@@ -21,7 +23,7 @@ function starString(fv: number): string {
   return s || '–';
 }
 
-export default function ScheduleGrid({ teams, picks, getCell, doubleWeeks }: ScheduleGridProps) {
+export default function ScheduleGrid({ teams, picks, getCell, doubleWeeks, onPick, onUnpick }: ScheduleGridProps) {
   const [sort, setSort] = useState<GridSort>({ week: null, dir: 'desc' });
   const weeks = Array.from({ length: 18 }, (_, i) => i + 1);
 
@@ -97,7 +99,12 @@ export default function ScheduleGrid({ teams, picks, getCell, doubleWeeks }: Sch
                   const locSym = cell.loc === 'H' ? 'vs' : cell.loc === 'A' ? '@' : 'N-';
                   const isPicked = (picks[String(w)] || []).includes(team.code);
                   return (
-                    <td key={w} className={isPicked ? 'pickedcell' : ''}>
+                    <td
+                      key={w}
+                      className={`gridcell${isPicked ? ' pickedcell' : ''}`}
+                      title={isPicked ? `Click to remove ${team.code} from Wk ${w}` : `Click to pick ${team.code} for Wk ${w}`}
+                      onClick={() => isPicked ? onUnpick(team.code, w) : onPick(team.code, w)}
+                    >
                       <span className={winCls} style={{ padding: '1px 4px', borderRadius: 4 }}>
                         {locSym}{cell.opp}
                       </span>

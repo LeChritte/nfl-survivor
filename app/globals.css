@@ -64,9 +64,10 @@ button.small{padding:3px 8px;font-size:.72rem;}
 }
 .panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:14px;box-shadow:var(--shadow);}
 .panel h2{font-size:.85rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text-dim);margin:0 0 10px;}
-.pool{position:sticky;top:12px;max-height:calc(100vh - 24px);overflow:auto;}
+.pool{position:sticky;top:12px;max-height:calc(100vh - 24px);overflow-y:auto;overflow-x:clip;}
 .teamgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:6px;}
-.chip{position:relative;border:1px solid var(--border);background:var(--chip-bg);border-radius:10px;padding:6px 4px 5px;text-align:center;cursor:grab;user-select:none;transition:transform .1s,box-shadow .1s;}
+.chip{position:relative;border:1px solid var(--border);background:var(--chip-bg);border-radius:10px;padding:6px 4px 5px;text-align:center;cursor:grab;user-select:none;-webkit-user-drag:element;transition:transform .1s,box-shadow .1s;}
+.chip:active{cursor:grabbing;opacity:.75;}
 .chip:hover{transform:translateY(-1px);box-shadow:var(--shadow);}
 .chip.selected{outline:2px solid var(--accent);}
 .chip.used{opacity:.38;cursor:not-allowed;background:var(--chip-used);}
@@ -117,7 +118,9 @@ table.scheduletable td.teamcell,table.scheduletable th.teamcell{position:sticky;
 table.scheduletable thead th.teamcell{z-index:3;}
 table.scheduletable th.dblcol{background:var(--bad-bg);color:var(--bad);}
 table.scheduletable td.byecell{color:var(--text-dim);font-style:italic;}
-table.scheduletable td.pickedcell{outline:2px solid var(--good);outline-offset:-2px;}
+table.scheduletable td.gridcell{cursor:pointer;}
+table.scheduletable td.gridcell:hover{background:rgba(29,78,216,.08);}
+table.scheduletable td.pickedcell{outline:2px solid var(--good);outline-offset:-2px;background:var(--good-bg);}
 table.scheduletable tr.usedrow td:not(.pickedcell){opacity:.35;}
 table.scheduletable tr.usedrow td.teamcell{opacity:.7;text-decoration:line-through;}
 table.scheduletable th.sortable{cursor:pointer;user-select:none;}

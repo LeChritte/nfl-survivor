@@ -22,7 +22,7 @@ export default function TeamChip({ code, fullName, futureVal, isUsed, usedWeek, 
       title={fullName}
       draggable={!isUsed}
       onClick={!isUsed ? onSelect : undefined}
-      onDragStart={!isUsed ? (e) => e.dataTransfer.setData('text/plain', code) : undefined}
+      onDragStart={!isUsed ? (e) => { e.dataTransfer.setData('text/plain', code); e.dataTransfer.effectAllowed = 'move'; } : undefined}
     >
       <div className="code">{code}</div>
       <div className="stars">{starString(futureVal)}</div>

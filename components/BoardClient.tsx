@@ -197,6 +197,17 @@ export default function BoardClient({ seedData: _seedData }: BoardClientProps) {
     assign(team, week);
   }
 
+  function saveScenario() {
+    const name = window.prompt('Name this scenario:', `Plan ${new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`);
+    if (!name) return;
+    try {
+      const existing = JSON.parse(localStorage.getItem('survivor_scenarios_v1') || '[]');
+      existing.push({ name, picks, savedAt: new Date().toISOString() });
+      localStorage.setItem('survivor_scenarios_v1', JSON.stringify(existing));
+      showToast(`Saved "${name}" — view in Compare scenarios`);
+    } catch { showToast("Couldn't save scenario."); }
+  }
+
   function handleReset() {
     if (!window.confirm('Clear every pick? This can\'t be undone.')) return;
     setPicks({});
@@ -283,6 +294,8 @@ export default function BoardClient({ seedData: _seedData }: BoardClientProps) {
         <div className="btnrow">
           <button className="small" onClick={showLegend}>Legend</button>
           <button className="small" onClick={exportCSV}>Export to Excel</button>
+          <button className="small" onClick={saveScenario}>Save scenario</button>
+          <a className="small" href="/scenarios" style={{ display: 'inline-flex', alignItems: 'center', textDecoration: 'none', border: '1px solid var(--border)', borderRadius: 8, padding: '3px 8px', fontSize: '.72rem', background: 'var(--panel)', color: 'var(--text)' }}>Compare scenarios</a>
           <button className="small" onClick={handleReset}>Reset all picks</button>
         </div>
       </div>
@@ -311,7 +324,14 @@ export default function BoardClient({ seedData: _seedData }: BoardClientProps) {
           A green outline marks a cell you&apos;ve picked; a whole row grays out once that team is used.
           Click &ldquo;Team&rdquo; to go back to A&ndash;Z.
         </p>
-        <ScheduleGrid teams={teams} picks={picks} getCell={getCell} doubleWeeks={doubleWeeks} />
+        <ScheduleGrid
+          teams={teams}
+          picks={picks}
+          getCell={getCell}
+          doubleWeeks={doubleWeeks}
+          onPick={(team, week) => assign(team, week)}
+          onUnpick={(team, week) => unassign(week, team)}
+        />
       </details>
 
       <div className="layout">

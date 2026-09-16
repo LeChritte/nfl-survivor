@@ -9,7 +9,12 @@ interface TeamPoolProps {
 }
 
 export default function TeamPool({ teams, usedMap, selectedTeam, onSelect }: TeamPoolProps) {
-  const sorted = [...teams].sort((a, b) => (b.futureVal - a.futureVal) || a.code.localeCompare(b.code));
+  const sorted = [...teams].sort((a, b) => {
+    const aUsed = a.code in usedMap;
+    const bUsed = b.code in usedMap;
+    if (aUsed !== bUsed) return aUsed ? 1 : -1; // unused first
+    return (b.futureVal - a.futureVal) || a.code.localeCompare(b.code);
+  });
 
   return (
     <div className="panel pool">
